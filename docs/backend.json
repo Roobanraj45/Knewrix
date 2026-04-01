@@ -1,48 +1,45 @@
 {
   "entities": {
-    "Fare": {
-      "title": "Fare",
-      "description": "Details for a specific route and class fare, including stage-wise pricing components.",
+    "Lead": {
+      "title": "Lead",
+      "description": "Details for a potential client inquiry from the growth audit form.",
       "type": "object",
       "properties": {
-        "operatorId": { "type": "string", "description": "The unique ID of the operator." },
-        "routeId": { "type": "string", "description": "The unique ID of the route." },
-        "classId": { "type": "string", "description": "The unique ID of the travel class." },
-        "tripId": { "type": "string", "description": "Internal ID for the trip." },
-        "tripCode": { "type": "string", "description": "Display code for the trip." },
-        "fromPlaceId": { "type": "string", "description": "Starting place ID." },
-        "toPlaceId": { "type": "string", "description": "Ending place ID." },
-        "fromPlaceName": { "type": "string", "description": "Starting place name." },
-        "toPlaceName": { "type": "string", "description": "Ending place name." },
-        "fromPlaceLGName": { "type": "string", "description": "Local language name for start place." },
-        "toPlaceLGName": { "type": "string", "description": "Local language name for end place." },
-        "fromStageNumber": { "type": "number", "description": "Starting stage index." },
-        "toStageNumber": { "type": "number", "description": "Ending stage index." },
-        "stageCount": { "type": "number", "description": "Number of stages between places." },
-        "distance": { "type": "number", "description": "Total distance in km." },
-        "adultFare": { "type": "number", "description": "Base fare for an adult." },
-        "childFare": { "type": "number", "description": "Base fare for a child." },
-        "luggageFare": { "type": "number", "description": "Additional fare for luggage." },
-        "tollCharge": { "type": "number", "description": "Applicable toll charges." },
-        "serviceCharge": { "type": "number", "description": "Operator service charges." },
-        "infraFee": { "type": "number", "description": "Infrastructure maintenance fee." },
-        "totalFare": { "type": "number", "description": "Total combined fare." },
-        "lowestClassTotalFare": { "type": "number", "description": "Reference fare for the lowest available class." },
-        "isActive": { "type": "boolean", "description": "Whether the fare record is active." },
+        "fullName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "companyName": { "type": "string" },
+        "monthlyRevenue": { "type": "string" },
+        "primaryGoal": { "type": "string" },
         "createdAt": { "type": "string", "format": "date-time" },
-        "updatedAt": { "type": "string", "format": "date-time" },
-        "syncStatus": { "type": "string", "enum": ["synced", "pending", "error"] }
+        "status": { "type": "string", "enum": ["new", "contacted", "qualified", "closed"] }
       },
-      "required": ["operatorId", "routeId", "classId", "totalFare"]
+      "required": ["fullName", "email", "primaryGoal"]
+    },
+    "PortfolioProject": {
+      "title": "Portfolio Project",
+      "description": "Details of a completed client project for the portfolio showcase.",
+      "type": "object",
+      "properties": {
+        "clientName": { "type": "string" },
+        "category": { "type": "string" },
+        "challenge": { "type": "string" },
+        "outcome": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["clientName", "category", "challenge", "outcome"]
     }
   },
   "auth": {
     "providers": ["google.com", "password"]
   },
   "firestore": {
-    "/fares/{fareId}": {
-      "schema": "Fare",
-      "description": "Collection of fare details mapped by unique fare IDs."
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of business inquiries."
+    },
+    "/portfolio/{projectId}": {
+      "schema": "PortfolioProject",
+      "description": "Collection of case studies."
     }
   }
 }
