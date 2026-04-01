@@ -1,6 +1,6 @@
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {CheckCircle2, Globe, Smartphone, BarChart3, Camera, Video, Calendar, Sparkles, Layers, Rocket, ShieldCheck, Zap, Laptop, Target, Cpu, Search, ArrowRight} from 'lucide-react';
+import {Globe, Smartphone, BarChart3, Camera, Video, Calendar, Sparkles, Layers, Rocket, ShieldCheck, Zap, Laptop, Target, ArrowRight} from 'lucide-react';
 import Link from 'next/link';
 
 const DETAILED_SERVICES = [
@@ -127,7 +127,6 @@ export default function ServicesPage() {
             <section key={service.id} id={service.id} className="scroll-mt-32">
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                  {/* Service Info Column */}
                   <div className="lg:col-span-5 space-y-8 animate-fade-up" style={{animationDelay: '100ms'}}>
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
@@ -152,7 +151,6 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   
-                  {/* Detailed Feature Cards Column */}
                   <div className="lg:col-span-7 grid grid-cols-1 gap-6">
                     {service.details.map((detail, idx) => (
                       <div 
@@ -176,38 +174,6 @@ export default function ServicesPage() {
             </section>
           ))}
         </div>
-
-        {/* Studio Technical Inventory */}
-        <section className="mt-40 p-12 md:p-20 bg-primary/5 rounded-[4rem] border border-primary/10 relative overflow-hidden">
-          <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
-            <Badge variant="outline" className="border-accent/40 text-accent font-bold text-[10px] uppercase tracking-widest px-3">Technical Ecosystem</Badge>
-            <h2 className="font-headline text-4xl md:text-5xl font-bold italic">Our <span className="not-italic gradient-text">Inventory.</span></h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              We leverage an enterprise-grade stack and professional production gear to ensure your brand operates at the highest global standards.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              { icon: Laptop, label: 'Next.js 15', sub: 'Web Engine' },
-              { icon: Smartphone, label: 'React Native', sub: 'Mobile Core' },
-              { icon: Camera, label: 'Phase One', sub: 'High-Res' },
-              { icon: Video, label: 'RED Komodo', sub: 'Cinematic' },
-              { icon: Layers, label: 'Vercel Edge', sub: 'Global Scale' },
-              { icon: ShieldCheck, label: 'Secure Logic', sub: 'Enterprise' }
-            ].map((tech, i) => (
-              <div key={i} className="flex flex-col items-center gap-4 group animate-fade-up" style={{animationDelay: `${i * 100}ms`}}>
-                <div className="w-16 h-16 rounded-2xl bg-background flex items-center justify-center text-primary/40 group-hover:text-primary group-hover:scale-110 transition-all duration-500 border border-border shadow-sm">
-                  <tech.icon size={28} />
-                </div>
-                <div className="text-center">
-                  <span className="block text-xs font-bold uppercase tracking-widest text-foreground">{tech.label}</span>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{tech.sub}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </div>
   );
