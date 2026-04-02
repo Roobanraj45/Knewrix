@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import {Button} from '@/components/ui/button';
 import {Badge} from '@/components/ui/badge';
-import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Rocket} from 'lucide-react';
+import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Rocket, Zap} from 'lucide-react';
 
 export default function Home() {
   const techServices = [
@@ -86,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Synergy Section - Optimizing LCP */}
+      {/* Synergy Section - Abstract Visual */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -111,16 +110,18 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg bg-muted">
-              <Image 
-                src="https://picsum.photos/seed/knewrix-strategy/800/450" 
-                alt="Knewrix Strategy" 
-                width={800}
-                height={450}
-                priority={true} // High priority for LCP improvement
-                className="object-cover"
-                data-ai-hint="Corporate strategy"
-              />
+            
+            {/* Abstract Visual Design */}
+            <div className="relative aspect-video rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/10 border border-primary/10 flex items-center justify-center">
+              <div className="absolute inset-0 opacity-20" 
+                   style={{backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)', backgroundSize: '24px 24px'}} />
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center animate-pulse">
+                   <Zap size={48} className="text-primary" />
+                </div>
+                <div className="absolute -top-12 -left-12 w-48 h-48 bg-primary/5 blur-3xl rounded-full" />
+                <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-accent/5 blur-3xl rounded-full" />
+              </div>
             </div>
           </div>
         </div>

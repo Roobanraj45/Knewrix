@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Target, Users, Lightbulb, Code, Rocket, ShieldCheck} from 'lucide-react';
+import {Target, Users, Lightbulb, Code, Rocket, ShieldCheck, Cpu} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Our Mission',
@@ -23,10 +23,20 @@ export default function AboutPage() {
         </header>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
-          <div className="p-12 md:p-20 bg-secondary/30 rounded-[2.5rem] border border-border/50 flex flex-col justify-center min-h-[400px] animate-in slide-in-from-left-8 duration-1000">
-            <h2 className="font-headline text-4xl md:text-6xl font-bold text-primary/20 select-none">CODE. CREATIVE. CONVERSION.</h2>
-            <div className="w-20 h-2 bg-primary mt-8 rounded-full" />
+          {/* Abstract Brand Visualization */}
+          <div className="p-12 md:p-20 bg-gradient-to-br from-secondary/50 via-background to-primary/5 rounded-[2.5rem] border border-border/50 flex flex-col justify-center min-h-[400px] animate-in slide-in-from-left-8 duration-1000 relative overflow-hidden group">
+            <div className="absolute inset-0 opacity-5 transition-opacity group-hover:opacity-10" 
+                 style={{backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
+            <div className="relative z-10">
+              <h2 className="font-headline text-4xl md:text-6xl font-bold text-primary/20 select-none">CODE. CREATIVE. CONVERSION.</h2>
+              <div className="w-20 h-2 bg-primary mt-8 rounded-full shadow-[0_0_20px_rgba(var(--primary),0.5)]" />
+              <div className="mt-12 flex gap-4">
+                <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><Cpu className="text-primary" size={24} /></div>
+                <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><Rocket className="text-accent" size={24} /></div>
+              </div>
+            </div>
           </div>
+
           <div className="space-y-8 animate-in slide-in-from-right-8 duration-1000">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Why We Are Different</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">

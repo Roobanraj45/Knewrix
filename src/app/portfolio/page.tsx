@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {Card, CardContent} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
-import {Camera, Globe, Zap} from 'lucide-react';
+import {Camera, Globe, Zap, Code, BarChart3, Rocket} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Success Stories',
@@ -13,31 +13,34 @@ const PROJECTS = [
     client: 'EcoScale Global',
     type: 'Event & Platform',
     icon: Globe,
+    visualIcon: Code,
+    color: 'from-blue-500/10 to-primary/5',
     problem: 'Launching a global brand without a unified digital presence or a high-impact physical launch event.',
     solution: 'Designed an enterprise SaaS platform and managed a 500-guest immersive launch event with full video production.',
     results: 'Reached 50k+ users and closed $1.5M in wholesale contracts during launch night.',
     tag: 'AgriTech',
-    image: 'https://picsum.photos/seed/ecoscale/600/400'
   },
   {
     client: 'Aura Fashion',
     type: 'Creative Production',
     icon: Camera,
+    visualIcon: Camera,
+    color: 'from-accent/10 to-yellow-500/5',
     problem: 'High-end products were failing to sell due to generic stock imagery and low-performing social ads.',
     solution: 'Conducted a 3-day editorial photoshoot and produced 50+ high-converting social media brand films.',
     results: 'ROAS increased from 2.1x to 5.4x within the first month of content deployment.',
     tag: 'Luxury D2C',
-    image: 'https://picsum.photos/seed/aura/600/400'
   },
   {
     client: 'Lumina Ed',
     type: 'Software & Marketing',
     icon: Zap,
+    visualIcon: BarChart3,
+    color: 'from-purple-500/10 to-primary/5',
     problem: 'Massive student churn due to poor mobile performance and lack of engaging video content.',
     solution: 'Engineered a PWA for offline learning and integrated a custom high-performance video player system.',
     results: 'Day 30 retention grew by 65% and user engagement session time doubled.',
     tag: 'EdTech',
-    image: 'https://picsum.photos/seed/lumina/600/400'
   }
 ];
 
@@ -55,13 +58,10 @@ export default function PortfolioPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {PROJECTS.map((project, i) => (
             <Card key={i} className="animated-card bg-card overflow-hidden flex flex-col group border-primary/5">
-              <div className="relative aspect-video overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.client} 
-                  className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  data-ai-hint="Corporate event photoshoot"
-                />
+              <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${project.color} flex items-center justify-center p-8 transition-all duration-700 group-hover:scale-105`}>
+                <div className="absolute inset-0 opacity-10" 
+                     style={{backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '16px 16px'}} />
+                <project.visualIcon size={64} className="text-primary/20 group-hover:text-primary transition-colors duration-500" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-primary text-primary-foreground font-bold">{project.tag}</Badge>
                 </div>

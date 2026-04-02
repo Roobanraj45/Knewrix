@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Camera, Video, Sparkles, Image as ImageIcon, Film, Users, Zap, Calendar } from 'lucide-react';
+import { Camera, Video, Sparkles, ImageIcon, Film, Users, Zap, Calendar, Play } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -30,14 +30,19 @@ export default function ProductionPage() {
         </header>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
-          <div className="relative aspect-square rounded-[3rem] overflow-hidden glossy shadow-2xl animate-fade-up">
-            <img 
-              src="https://picsum.photos/seed/knewrix-production/1000/1000" 
-              alt="Studio production" 
-              className="object-cover w-full h-full"
-              data-ai-hint="Photography studio equipment"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+          {/* Abstract Production Visual */}
+          <div className="relative aspect-square rounded-[3rem] overflow-hidden glossy shadow-2xl animate-fade-up bg-gradient-to-tr from-primary/10 via-background to-accent/10 border border-primary/5 flex items-center justify-center p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent opacity-50" />
+            <div className="relative z-10 w-full h-full border-2 border-dashed border-primary/20 rounded-2xl flex items-center justify-center">
+               <div className="w-32 h-32 rounded-full bg-background border border-primary/20 flex items-center justify-center shadow-2xl animate-pulse">
+                 <Play size={48} className="text-primary fill-primary ml-2" />
+               </div>
+            </div>
+            <div className="absolute bottom-12 right-12 flex gap-2">
+               {[1, 2, 3].map(i => (
+                 <div key={i} className="w-2 h-2 rounded-full bg-primary/40" />
+               ))}
+            </div>
           </div>
           
           <div className="space-y-12">
