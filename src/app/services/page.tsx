@@ -116,21 +116,37 @@ export default function ServicesPage() {
   return (
     <div className="pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-24 text-center max-w-4xl mx-auto animate-fade-in">
+        <header className="mb-16 text-center max-w-4xl mx-auto animate-fade-in">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 uppercase tracking-widest font-bold px-4 py-1.5 rounded-full text-[10px]">
             The Knewrix Capability
           </Badge>
           <h1 className="font-headline text-4xl md:text-7xl font-bold mb-6 italic">
             Engineering <span className="gradient-text not-italic">Growth.</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
             From the first line of code to the final content drop, we provide a unified approach to scaling global brands.
           </p>
         </header>
 
+        {/* Sticky Local Navigation */}
+        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-md py-4 mb-20 border-b border-border/50">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+            {DETAILED_SERVICES.map((service) => (
+              <Link 
+                key={service.id} 
+                href={`#${service.id}`}
+                className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 px-4 py-2 rounded-full hover:bg-primary/5 border border-transparent hover:border-primary/20"
+              >
+                <service.icon size={16} />
+                <span className="hidden sm:inline">{service.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <div className="space-y-32">
           {DETAILED_SERVICES.map((service, i) => (
-            <section key={service.id} id={service.id} className="scroll-mt-32">
+            <section key={service.id} id={service.id} className="scroll-mt-48">
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                   <div className="lg:col-span-5 space-y-8 animate-fade-up" style={{animationDelay: '100ms'}}>
