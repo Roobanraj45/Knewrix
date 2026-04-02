@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {cn} from '@/lib/utils';
 import {Button} from '@/components/ui/button';
-import {Menu, X, ChevronDown} from 'lucide-react';
+import {Menu, X, ChevronDown, Globe, Smartphone, BarChart3, Camera} from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,10 +19,10 @@ const NAV_ITEMS = [
     name: 'Services',
     href: '/services',
     items: [
-      {name: 'Websites', href: '/services#websites'},
-      {name: 'Mobile Apps', href: '/services#mobile'},
-      {name: 'Marketing', href: '/services#marketing'},
-      {name: 'Content Creation', href: '/services#content'},
+      {name: 'Websites', href: '/services#websites', icon: Globe},
+      {name: 'Mobile Apps', href: '/services#mobile', icon: Smartphone},
+      {name: 'Marketing', href: '/services#marketing', icon: BarChart3},
+      {name: 'Content Creation', href: '/services#content', icon: Camera},
     ],
   },
   {name: 'Studio', href: '/production'},
@@ -54,20 +54,26 @@ export function Navigation() {
               item.items ? (
                 <DropdownMenu key={item.name}>
                   <DropdownMenuTrigger className={cn(
-                    "flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent outline-none",
-                    pathname.startsWith(item.href) ? "text-accent" : "text-muted-foreground"
+                    "flex items-center gap-1 text-sm font-medium transition-all hover:text-primary outline-none group",
+                    pathname.startsWith(item.href) ? "text-primary" : "text-muted-foreground"
                   )}>
-                    {item.name} <ChevronDown size={14} />
+                    {item.name} 
+                    <ChevronDown size={14} className="group-data-[state=open]:rotate-180 transition-transform duration-200" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" className="w-48 p-2 rounded-xl border-border/50 bg-background/95 backdrop-blur-lg">
-                    {item.items.map((subItem) => (
-                      <DropdownMenuItem key={subItem.name} asChild className="rounded-lg focus:bg-primary/10 focus:text-primary cursor-pointer">
-                        <Link href={subItem.href}>{subItem.name}</Link>
-                      </DropdownMenuItem>
-                    ))}
-                    <div className="border-t border-border/50 my-1 pt-1">
-                      <DropdownMenuItem asChild className="rounded-lg focus:bg-primary/10 focus:text-primary cursor-pointer font-bold">
-                        <Link href={item.href}>All Services</Link>
+                  <DropdownMenuContent align="start" className="w-56 p-2 rounded-2xl border-border/50 bg-background/95 backdrop-blur-xl shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="grid gap-1">
+                      {item.items.map((subItem) => (
+                        <DropdownMenuItem key={subItem.name} asChild className="rounded-xl px-3 py-2.5 focus:bg-primary/10 focus:text-primary cursor-pointer transition-colors group">
+                          <Link href={subItem.href} className="flex items-center gap-3">
+                            <subItem.icon size={16} className="text-muted-foreground group-focus:text-primary" />
+                            <span className="font-medium text-sm">{subItem.name}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-border/50">
+                      <DropdownMenuItem asChild className="rounded-xl focus:bg-primary focus:text-primary-foreground cursor-pointer font-bold justify-center py-2">
+                        <Link href={item.href}>View All Capabilities</Link>
                       </DropdownMenuItem>
                     </div>
                   </DropdownMenuContent>
@@ -77,15 +83,15 @@ export function Navigation() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-accent",
-                    pathname === item.href ? "text-accent" : "text-muted-foreground"
+                    "text-sm font-medium transition-colors hover:text-primary",
+                    pathname === item.href ? "text-primary" : "text-muted-foreground"
                   )}
                 >
                   {item.name}
                 </Link>
               )
             ))}
-            <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 rounded-xl px-5 py-0 h-9 font-bold">
+            <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 rounded-xl px-5 py-0 h-9 font-bold shadow-lg shadow-primary/20">
               <Link href="/contact">Book Audit</Link>
             </Button>
           </div>
@@ -93,9 +99,9 @@ export function Navigation() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors p-2"
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -103,35 +109,53 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-border">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-background border-b border-border shadow-xl">
+          <div className="px-4 pt-2 pb-6 space-y-1">
             {NAV_ITEMS.map((item) => (
-              <React.Fragment key={item.name}>
-                <Link
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium",
-                    pathname === item.href ? "text-accent bg-accent/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  )}
-                >
-                  {item.name}
-                </Link>
-                {item.items && item.items.map((subItem) => (
+              <div key={item.name} className="py-2">
+                {item.items ? (
+                  <>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "block px-3 py-2 rounded-xl text-lg font-bold",
+                        pathname === item.href ? "text-primary bg-primary/5" : "text-foreground"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                    <div className="mt-1 ml-4 grid gap-1 border-l-2 border-primary/10 pl-4">
+                      {item.items.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                        >
+                          <subItem.icon size={14} />
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
                   <Link
-                    key={subItem.name}
-                    href={subItem.href}
+                    href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-8 py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                    className={cn(
+                      "block px-3 py-2 rounded-xl text-lg font-bold",
+                      pathname === item.href ? "text-primary bg-primary/5" : "text-foreground"
+                    )}
                   >
-                    {subItem.name}
+                    {item.name}
                   </Link>
-                ))}
-              </React.Fragment>
+                )}
+              </div>
             ))}
-            <div className="px-3 py-2">
-              <Button asChild className="w-full bg-primary" onClick={() => setIsOpen(false)}>
-                <Link href="/contact">Book a Growth Audit</Link>
+            <div className="pt-4 px-3">
+              <Button asChild className="w-full bg-primary py-6 text-lg rounded-2xl" onClick={() => setIsOpen(false)}>
+                <Link href="/contact">Request Growth Audit</Link>
               </Button>
             </div>
           </div>

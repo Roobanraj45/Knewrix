@@ -128,17 +128,19 @@ export default function ServicesPage() {
           </p>
         </header>
 
-        {/* Sticky Local Navigation */}
-        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-md py-4 mb-20 border-b border-border/50">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        {/* Sticky Local Navigation - Enhanced Design */}
+        <div className="sticky top-16 z-40 bg-background/90 backdrop-blur-xl py-6 mb-24 border-b border-border/50">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6">
             {DETAILED_SERVICES.map((service) => (
               <Link 
                 key={service.id} 
                 href={`#${service.id}`}
-                className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 px-4 py-2 rounded-full hover:bg-primary/5 border border-transparent hover:border-primary/20"
+                className="group flex items-center gap-2 px-6 py-2.5 rounded-full border border-border/50 bg-secondary/30 hover:bg-primary/5 hover:border-primary/30 hover:shadow-md transition-all duration-300"
               >
-                <service.icon size={16} />
-                <span className="hidden sm:inline">{service.title}</span>
+                <service.icon size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                <span className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground group-hover:text-primary transition-colors">
+                  {service.title.split(' ')[service.title.split(' ').length - 1]}
+                </span>
               </Link>
             ))}
           </div>
