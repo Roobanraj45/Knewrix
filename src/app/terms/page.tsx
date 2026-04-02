@@ -1,8 +1,12 @@
-'use client';
-
+import {Metadata} from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Gavel, ShieldAlert, Cpu, Globe2, AlertTriangle, Briefcase, Landmark, Scale } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'Legal framework and engagement terms for Knewrix Private Limited. IPR, Payment Obligations, and Dispute Resolution.',
+};
 
 export default function TermsPage() {
   return (

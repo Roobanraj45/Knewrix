@@ -1,7 +1,13 @@
+import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
 import {Globe, Smartphone, BarChart3, Camera, Video, Calendar, Sparkles, Layers, Rocket, ShieldCheck, Zap, Laptop, Target, ArrowRight} from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Our Services',
+  description: 'Enterprise Web Development, Custom Mobile Apps, Performance Marketing, and Cinematic Content Creation.',
+};
 
 const DETAILED_SERVICES = [
   {

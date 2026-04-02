@@ -1,8 +1,12 @@
-'use client';
-
+import {Metadata} from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Shield, Lock, Eye, FileText, UserCheck, Scale, Database, ShieldCheck } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Knewrix Private Limited Privacy Charter. Compliant with DPDP Act 2023 and global data protection standards.',
+};
 
 export default function PrivacyPage() {
   return (
@@ -107,7 +111,7 @@ export default function PrivacyPage() {
                 <p><span className="font-bold text-foreground">Officer:</span> Grievance Redressal Officer</p>
                 <p><span className="font-bold text-foreground">Entity:</span> Knewrix Private Limited</p>
                 <p><span className="font-bold text-foreground">Email:</span> compliance@knewrix.com</p>
-                <p><span className="font-bold text-foreground">Address:</span> No 2, Sri Abhirami Nagar, Thiruverkadu, Chennai - 600077</p>
+                <p><span className="font-bold text-foreground">Address:</span> No 2, Sri Abhirami Nagar, Chinna Koladi Block 1, Thiruverkadu, Chennai - 600077</p>
               </div>
               <p className="mt-4 text-xs text-muted-foreground italic">
                 We acknowledge all grievances within 48 hours and resolve them within 15 business days.

@@ -1,7 +1,13 @@
+import {Metadata} from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Camera, Video, Sparkles, Image as ImageIcon, Film, Users, Zap, Calendar } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Studio Production',
+  description: 'High-end visual storytelling. From editorial photography to cinematic brand films, we create the content that builds brand authority.',
+};
 
 export default function ProductionPage() {
   const showcase = [

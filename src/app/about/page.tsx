@@ -1,6 +1,12 @@
+import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
 import {Target, Users, Lightbulb, Code, Rocket, ShieldCheck} from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Our Mission',
+  description: 'Learn how Knewrix combines elite software engineering with cinematic creativity to scale global brands.',
+};
 
 export default function AboutPage() {
   return (

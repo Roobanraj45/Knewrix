@@ -1,8 +1,14 @@
+import {Metadata} from 'next';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
 import {Textarea} from '@/components/ui/textarea';
 import {Mail, Calendar, ArrowRight, MapPin, Phone} from 'lucide-react';
 import {GenAIStrategyTool} from '@/components/gen-ai-strategy-tool';
+
+export const metadata: Metadata = {
+  title: 'Book a Growth Audit',
+  description: 'Ready to scale? Connect with Knewrix experts for a technical and strategic growth audit of your business.',
+};
 
 export default function ContactPage() {
   return (

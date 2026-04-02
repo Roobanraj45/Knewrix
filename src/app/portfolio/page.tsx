@@ -1,6 +1,12 @@
+import {Metadata} from 'next';
 import {Card, CardContent} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
 import {Camera, Globe, Zap} from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Our Success Stories',
+  description: 'Explore the high-impact projects where Knewrix delivered massive ROI through unified tech and creative strategy.',
+};
 
 const PROJECTS = [
   {
