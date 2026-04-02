@@ -1,12 +1,16 @@
 import Link from 'next/link';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-background border-t border-border/50 py-12 md:py-20">
+    <footer className="bg-background border-t border-border/50 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="group flex flex-col items-start mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <Link href="/" className="group flex flex-col items-start">
               <span className="font-headline text-2xl font-bold tracking-tighter leading-none">
                 KNEW<span className="text-primary">RIX</span>
               </span>
@@ -14,32 +18,112 @@ export function Footer() {
                 Digital Growth Partner
               </span>
             </Link>
-            <p className="text-muted-foreground max-w-sm mb-6">
-              Your end-to-end digital growth partner. We build products, establish brands, and scale growth through integrated strategy and execution.
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+              Engineering the future of growth. We combine elite software development with cinematic creative strategy to scale global brands.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest">LinkedIn</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest">Twitter</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest">Instagram</a>
+            <div className="flex items-center gap-4 pt-2">
+              <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="LinkedIn">
+                <Linkedin size={18} />
+              </a>
+              <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="Twitter">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="Instagram">
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
-          
+
+          {/* Expertise Column */}
           <div>
-            <h4 className="font-headline font-semibold mb-6">Expertise</h4>
+            <h4 className="font-headline font-bold text-lg mb-6 tracking-tight italic">Expertise.</h4>
             <ul className="space-y-4">
-              <li><Link href="/services#websites" className="text-muted-foreground hover:text-foreground transition-colors">Websites</Link></li>
-              <li><Link href="/services#mobile" className="text-muted-foreground hover:text-foreground transition-colors">Mobile Apps</Link></li>
-              <li><Link href="/services#marketing" className="text-muted-foreground hover:text-foreground transition-colors">Digital Marketing</Link></li>
-              <li><Link href="/services#content" className="text-muted-foreground hover:text-foreground transition-colors">Brand Identity</Link></li>
+              <li>
+                <Link href="/services#websites" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Enterprise Websites
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#mobile" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Mobile Application
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#marketing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Performance Marketing
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#content" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Content Creation
+                </Link>
+              </li>
             </ul>
           </div>
+
+          {/* Company Column */}
+          <div>
+            <h4 className="font-headline font-bold text-lg mb-6 tracking-tight italic">Company.</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  The Story
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Success Stories
+                </Link>
+              </li>
+              <li>
+                <Link href="/production" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Studio Production
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Book a Growth Audit
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="space-y-6">
+            <h4 className="font-headline font-bold text-lg mb-6 tracking-tight italic">Connect.</h4>
+            <div className="space-y-4">
+              <div className="flex gap-4">
+                <MapPin className="text-primary flex-shrink-0" size={18} />
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  No 2, Sri Abhirami Nagar,<br />
+                  Chinna Koladi Block 1,<br />
+                  Chennai - 600077
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Phone className="text-primary flex-shrink-0" size={18} />
+                <p className="text-sm text-muted-foreground font-medium">+91 96007 12539</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail className="text-primary flex-shrink-0" size={18} />
+                <p className="text-sm text-muted-foreground font-medium">hello@knewrix.com</p>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div className="border-t border-border/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Knewrix Growth Partner. All rights reserved.</p>
-          <div className="flex gap-8 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-foreground">Terms of Service</Link>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs text-muted-foreground font-medium">
+            © {currentYear} Knewrix Private Limited. Built for global scale.
+          </p>
+          <div className="flex items-center gap-8">
+            <Link href="/privacy" className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground hover:text-primary transition-colors">
+              Privacy Charter
+            </Link>
+            <Link href="/terms" className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground hover:text-primary transition-colors">
+              Legal Framework
+            </Link>
           </div>
         </div>
       </div>
