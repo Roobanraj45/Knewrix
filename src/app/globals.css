@@ -23,7 +23,7 @@
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 199 89% 48%;
-    --radius: 1.5rem;
+    --radius: 1rem;
   }
 }
 
@@ -43,31 +43,9 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient;
 }
 
-.glossy {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @keyframes floatSlow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.05); }
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -10px); }
 }
 
 @keyframes gradient {
@@ -76,40 +54,25 @@
   100% { background-position: 0% 50%; }
 }
 
-@keyframes brand-loading {
-  0% { transform: translateX(-100%); }
-  50% { transform: translateX(0); }
-  100% { transform: translateX(100%); }
-}
-
-.animate-fade-up {
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 1s ease forwards;
-}
-
 .animate-float-slow {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glowPulse 6s ease-in-out infinite;
+  animation: floatSlow 10s ease-in-out infinite;
 }
 
 .animate-gradient {
-  animation: gradient 10s ease infinite;
+  animation: gradient 8s ease infinite;
 }
 
-.animate-brand-loading {
-  animation: brand-loading 2s ease-in-out infinite;
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduced complexity for animations to improve performance */
 .animated-card {
-  @apply glossy transition-all duration-500 hover:scale-[1.01] hover:border-primary/40 hover:shadow-primary/5;
-}
-
-.premium-blur {
-  @apply bg-white/70 backdrop-blur-md;
+  @apply transition-all duration-300 hover:scale-[1.01] hover:border-primary/40 hover:shadow-lg;
 }

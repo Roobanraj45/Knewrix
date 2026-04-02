@@ -12,12 +12,14 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+  preload: true,
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-space-grotesk',
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -41,11 +43,8 @@ export const metadata: Metadata = {
     'Brand Scaling',
     'Growth Audit',
     'SEO Services',
-    'Content Creation',
     'Chennai Tech Company',
     'Knewrix Private Limited',
-    'Next.js Development',
-    'Performance Marketing'
   ],
   authors: [{ name: 'Knewrix Private Limited' }],
   creator: 'Knewrix Private Limited',
@@ -81,18 +80,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/shortcut-icon.png',
-    apple: '/apple-icon.png',
   },
 };
 
@@ -103,7 +93,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="antialiased selection:bg-primary/20 selection:text-primary relative font-body">
+      <body className="antialiased selection:bg-primary/20 selection:text-primary relative font-body bg-background text-foreground">
         <Suspense fallback={null}>
           <NavigationLoader />
         </Suspense>

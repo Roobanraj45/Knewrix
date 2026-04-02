@@ -13,53 +13,20 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-background">
-      {/* Light Sky Atmospheric Layers */}
-      <div className="absolute inset-0 opacity-[0.4]">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full blur-[120px] animate-glow"
-            style={{
-              width: `${Math.random() * 600 + 400}px`,
-              height: `${Math.random() * 600 + 400}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              backgroundColor: i % 2 === 0 ? 'hsl(var(--primary) / 0.15)' : 'hsl(var(--accent) / 0.1)',
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${Math.random() * 15 + 10}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Optimized Background Gradient - Much lighter than multiple blurred divs */}
+      <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.2),transparent_70%)]" />
+      
+      {/* Subtle Moving Layer */}
+      <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] opacity-[0.05] animate-float-slow bg-[radial-gradient(circle_at_20%_30%,hsl(var(--accent)/0.3),transparent_50%)]" />
 
-      {/* Soft Light Grid Layer */}
+      {/* Static Light Grid - Fixed performance-heavy perspective transforms */}
       <div 
-        className="absolute inset-0 opacity-[0.03]" 
+        className="absolute inset-0 opacity-[0.02]" 
         style={{
           backgroundImage: `linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: '80px 80px',
-          transform: 'perspective(1000px) rotateX(60deg) translateY(-100px)',
-          transformOrigin: 'top'
+          backgroundSize: '100px 100px',
         }}
       />
-
-      {/* Floating Circles */}
-      <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute border border-primary/10 rounded-full animate-float-slow"
-            style={{
-              width: `${Math.random() * 200 + 100}px`,
-              height: `${Math.random() * 200 + 100}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              opacity: 0.2
-            }}
-          />
-        ))}
-      </div>
     </div>
   );
 }
