@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {Button} from '@/components/ui/button';
 import {Badge} from '@/components/ui/badge';
 import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Zap, Layers, Rocket, Award, Users} from 'lucide-react';
@@ -48,28 +49,28 @@ export default function Home() {
       <section className="relative pt-24 pb-12 md:pt-36 md:pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="animate-fade-in opacity-0">
+            <div className="animate-fade-in">
               <Badge variant="outline" className="mb-6 border-primary/40 text-primary bg-primary/5 uppercase tracking-[0.3em] font-bold px-4 py-1.5 rounded-full text-[10px]">
                 End-to-End Digital Growth Partner
               </Badge>
             </div>
             
             <h1 className="font-headline text-5xl md:text-7xl font-bold leading-[1.1] mb-8 tracking-tighter">
-              <span className="block animate-fade-up opacity-0 [animation-delay:200ms]">
+              <span className="block animate-fade-up [animation-delay:200ms]">
                 We build software.
               </span>
-              <span className="block gradient-text animate-fade-up opacity-0 [animation-delay:400ms]">
+              <span className="block gradient-text animate-fade-up [animation-delay:400ms]">
                 We scale brands.
               </span>
             </h1>
 
-            <div className="animate-fade-up opacity-0 [animation-delay:600ms]">
+            <div className="animate-fade-up [animation-delay:600ms]">
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
                 Knewrix is a premium technology firm delivering <span className="text-foreground font-bold">Websites</span>, <span className="text-foreground font-bold">Mobile Apps</span>, and <span className="text-foreground font-bold">Digital Marketing</span> for ambitious global brands.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up opacity-0 [animation-delay:800ms]">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up [animation-delay:800ms]">
               <Button asChild size="lg" className="bg-primary text-primary-foreground text-base px-8 py-6 shadow-xl shadow-primary/10 hover:scale-105 transition-all rounded-xl font-bold">
                 <Link href="/contact">Book a Growth Audit</Link>
               </Button>
@@ -125,10 +126,11 @@ export default function Home() {
               </div>
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl group">
-              <img 
+              <Image 
                 src="https://picsum.photos/seed/knewrix-strategy/800/600" 
                 alt="Strategy meeting" 
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
                 data-ai-hint="Corporate strategy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
@@ -155,7 +157,7 @@ export default function Home() {
           {techServices.map((service, i) => (
             <div 
               key={i} 
-              className="group relative animated-card rounded-[2.5rem] p-8 flex flex-col bg-secondary/20 animate-fade-up opacity-0 border-primary/5 hover:border-primary/20 transition-all" 
+              className="group relative animated-card rounded-[2.5rem] p-8 flex flex-col bg-secondary/20 animate-fade-up border-primary/5 hover:border-primary/20 transition-all" 
               style={{ animationDelay: `${i * 150}ms` }}
             >
               <div className="absolute top-6 right-8 text-4xl font-black text-primary/5 select-none group-hover:text-primary/10 transition-colors">
@@ -219,12 +221,13 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-accent/5 rounded-[4rem] p-12 md:p-20 border border-accent/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+            <div className="relative aspect-square">
               <div className="absolute -top-12 -left-12 w-32 h-32 bg-primary/20 blur-[60px] rounded-full animate-glow" />
-              <img 
+              <Image 
                 src="https://picsum.photos/seed/knewrix-global/800/800" 
                 alt="Global impact" 
-                className="rounded-[3rem] shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-1000"
+                fill
+                className="rounded-[3rem] shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-1000 object-cover"
                 data-ai-hint="Global business"
               />
             </div>
@@ -261,8 +264,8 @@ export default function Home() {
           <div className="max-w-2xl mx-auto relative z-10 space-y-8">
             <div className="flex justify-center -space-x-4 mb-4">
                {[1,2,3,4].map(i => (
-                 <div key={i} className="w-12 h-12 rounded-full border-4 border-background overflow-hidden bg-muted group transition-transform hover:z-20 hover:scale-110">
-                   <img src={`https://picsum.photos/seed/${i+10}/100/100`} alt="Client" />
+                 <div key={i} className="relative w-12 h-12 rounded-full border-4 border-background overflow-hidden bg-muted group transition-transform hover:z-20 hover:scale-110">
+                   <Image src={`https://picsum.photos/seed/${i+10}/100/100`} alt="Client" fill className="object-cover" />
                  </div>
                ))}
             </div>

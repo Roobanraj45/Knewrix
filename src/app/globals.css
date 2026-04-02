@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground overflow-x-hidden font-body selection:bg-primary/20 selection:text-primary;
+    @apply bg-background text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;
@@ -50,13 +50,8 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
-.glossy-accent {
-  background: linear-gradient(135deg, hsla(var(--primary) / 0.1) 0%, hsla(var(--accent) / 0.1) 100%);
-  border: 1px solid hsla(var(--primary) / 0.2);
-}
-
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -87,17 +82,12 @@
   100% { transform: translateX(100%); }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
 .animate-fade-up {
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in {
-  animation: fadeIn 1.2s ease forwards;
+  animation: fadeIn 1s ease forwards;
 }
 
 .animate-float-slow {
@@ -117,15 +107,9 @@
 }
 
 .animated-card {
-  @apply glossy transition-all duration-500 hover:scale-[1.015] hover:border-primary/40 hover:shadow-primary/5;
+  @apply glossy transition-all duration-500 hover:scale-[1.01] hover:border-primary/40 hover:shadow-primary/5;
 }
 
 .premium-blur {
   @apply bg-white/70 backdrop-blur-md;
-}
-
-.shimmer-bg {
-  background: linear-gradient(90deg, transparent, hsla(var(--primary) / 0.05), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite linear;
 }
