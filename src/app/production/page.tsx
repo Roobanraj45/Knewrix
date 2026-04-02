@@ -1,13 +1,56 @@
 import {Metadata} from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Camera, Video, Sparkles, ImageIcon, Film, Users, Zap, Calendar, Play } from 'lucide-react';
+import { Camera, Video, Sparkles, ImageIcon, Film, Users, Zap, Calendar, Play, Heart, Utensils, Home, Building, Trophy, GraduationCap, Tv, MonitorPlay, Music, Rocket, Globe, BarChart3, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Studio Production',
   description: 'High-end visual storytelling. From editorial photography to cinematic brand films, we create the content that builds brand authority.',
 };
+
+const PHOTO_CAPABILITIES = [
+  { name: 'Wedding & Engagement Photography', icon: Heart },
+  { name: 'Family & Maternity Portraits', icon: Sparkles },
+  { name: 'Corporate Event Photography', icon: Building },
+  { name: 'Private Party & Social Events', icon: Calendar },
+  { name: 'Concert & Nightlife Photography', icon: Music },
+  { name: 'Senior & Graduation Portraits', icon: GraduationCap },
+  { name: 'Lifestyle Photography', icon: Sparkles },
+  { name: 'Product Photography', icon: Smartphone },
+  { name: 'Food & Beverage Photography', icon: Utensils },
+  { name: 'Personal Branding', icon: Users },
+  { name: 'Fashion & Editorial Photography', icon: Zap },
+  { name: 'Real Estate Photography', icon: Home },
+  { name: 'Architectural Photography', icon: Building },
+  { name: 'Drone/Aerial Photography', icon: Rocket },
+  { name: 'Sports Photography', icon: Trophy },
+  { name: 'Photojournalism & Documentary', icon: Film },
+  { name: 'Fine Art Photography', icon: Sparkles },
+];
+
+const VIDEO_CAPABILITIES = [
+  { name: 'Brand Promos & Commercials', icon: Zap },
+  { name: 'Digital Ad Campaigns', icon: BarChart3 },
+  { name: 'Television Commercials', icon: Tv },
+  { name: 'Theatrical Ads', icon: Film },
+  { name: 'Corporate Documentaries', icon: Building },
+  { name: 'Training & Educational Videos', icon: GraduationCap },
+  { name: 'Testimonials & Case Studies', icon: Users },
+  { name: 'Wedding Videography', icon: Heart },
+  { name: 'Festival Coverage', icon: Music },
+  { name: 'Event Highlights & Recaps', icon: Calendar },
+  { name: 'Live Streaming Services', icon: Globe },
+  { name: 'YouTube Production', icon: MonitorPlay },
+  { name: 'Short-Form Video', icon: Smartphone },
+  { name: 'Music Videos', icon: Music },
+  { name: 'Cinematic Property Walkthroughs', icon: Home },
+  { name: 'Aerial Drone Videography', icon: Rocket },
+  { name: '360° Virtual Tours', icon: Sparkles },
+  { name: 'Animation & Motion Graphics', icon: Zap },
+  { name: 'Post-Production & Editing', icon: MonitorPlay },
+  { name: 'Documentary & Short Films', icon: Film },
+];
 
 export default function ProductionPage() {
   const showcase = [
@@ -31,17 +74,12 @@ export default function ProductionPage() {
 
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           {/* Abstract Production Visual */}
-          <div className="relative aspect-square rounded-[3rem] overflow-hidden glossy shadow-2xl animate-fade-up bg-gradient-to-tr from-primary/10 via-background to-accent/10 border border-primary/5 flex items-center justify-center p-12">
+          <div className="relative aspect-square rounded-[3rem] overflow-hidden glossy shadow-2xl bg-gradient-to-tr from-primary/10 via-background to-accent/10 border border-primary/5 flex items-center justify-center p-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent opacity-50" />
             <div className="relative z-10 w-full h-full border-2 border-dashed border-primary/20 rounded-2xl flex items-center justify-center">
                <div className="w-32 h-32 rounded-full bg-background border border-primary/20 flex items-center justify-center shadow-2xl animate-pulse">
                  <Play size={48} className="text-primary fill-primary ml-2" />
                </div>
-            </div>
-            <div className="absolute bottom-12 right-12 flex gap-2">
-               {[1, 2, 3].map(i => (
-                 <div key={i} className="w-2 h-2 rounded-full bg-primary/40" />
-               ))}
             </div>
           </div>
           
@@ -73,6 +111,41 @@ export default function ProductionPage() {
           </div>
         </section>
 
+        {/* Detailed Services Grid */}
+        <section className="space-y-32 mb-32">
+          {/* Photography */}
+          <div className="space-y-12">
+            <div className="max-w-3xl">
+              <h2 className="font-headline text-4xl font-bold mb-6">Photography Services</h2>
+              <p className="text-lg text-muted-foreground">Capturing moments with precision and artistic vision across all sectors.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {PHOTO_CAPABILITIES.map((photo, i) => (
+                <div key={i} className="p-6 rounded-2xl border border-border/50 bg-secondary/20 hover:border-primary/30 transition-all group">
+                  <photo.icon size={20} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="font-bold text-sm leading-snug">{photo.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Videography */}
+          <div className="space-y-12">
+            <div className="max-w-3xl">
+              <h2 className="font-headline text-4xl font-bold mb-6">Videography Services</h2>
+              <p className="text-lg text-muted-foreground">High-impact cinematic production for digital, television, and corporate platforms.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {VIDEO_CAPABILITIES.map((video, i) => (
+                <div key={i} className="p-6 rounded-2xl border border-border/50 bg-secondary/20 hover:border-primary/30 transition-all group">
+                  <video.icon size={20} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="font-bold text-sm leading-snug">{video.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-secondary/30 rounded-[4rem] p-12 md:p-24 border border-border/50 text-center relative overflow-hidden">
           <div className="max-w-3xl mx-auto relative z-10">
             <h2 className="font-headline text-4xl md:text-6xl font-bold mb-8 italic">The Knewrix <span className="not-italic gradient-text">Method.</span></h2>
@@ -94,8 +167,6 @@ export default function ProductionPage() {
               ))}
             </div>
           </div>
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-accent/5 blur-[100px] rounded-full animate-glow" />
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] rounded-full animate-glow" />
         </section>
       </div>
     </div>

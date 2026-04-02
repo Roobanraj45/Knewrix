@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Globe, Smartphone, BarChart3, Camera, Video, Calendar, Sparkles, Layers, Rocket, ShieldCheck, Zap, Laptop, Target, ArrowRight} from 'lucide-react';
+import {Globe, Smartphone, BarChart3, Camera, Video, Calendar, Sparkles, Layers, Rocket, ShieldCheck, Zap, Laptop, Target, ArrowRight, Heart, Utensils, Home, Building, Trophy, GraduationCap, Tv, MonitorPlay, Music, Film} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -93,23 +93,66 @@ const DETAILED_SERVICES = [
     description: 'Visual dominance is the key to trust. We combine editorial-grade photography with cinematic brand films to create an emotional resonance that code alone cannot achieve.',
     details: [
       {
-        title: 'Editorial Photography',
-        desc: 'High-spec brand and product imagery captured with industry-leading Phase One equipment.',
+        title: 'Photography Excellence',
+        desc: 'From high-spec product imagery to corporate events and editorial fashion shoots.',
         icon: Camera
       },
       {
-        title: 'Brand Film Strategy',
-        desc: 'Story-driven video production that stops the scroll and builds long-term brand equity.',
+        title: 'Cinematic Videography',
+        desc: 'Story-driven brand films, theatrical ads, and social media campaign production.',
         icon: Video
       },
       {
-        title: 'Event Activations',
+        title: 'Event & Brand Activations',
         desc: 'Coordinating high-impact physical launches with integrated digital coverage and live content drops.',
         icon: Calendar
       }
     ],
     cta: 'Book a Creative Session'
   }
+];
+
+const PHOTO_SERVICES = [
+  { name: 'Wedding & Engagement', icon: Heart },
+  { name: 'Family & Maternity', icon: Sparkles },
+  { name: 'Corporate Events', icon: Building },
+  { name: 'Social Events', icon: Calendar },
+  { name: 'Concert & Nightlife', icon: Music },
+  { name: 'Graduation Portraits', icon: GraduationCap },
+  { name: 'Lifestyle', icon: Sparkles },
+  { name: 'Product', icon: Laptop },
+  { name: 'Food & Beverage', icon: Utensils },
+  { name: 'Personal Branding', icon: Target },
+  { name: 'Fashion & Editorial', icon: Zap },
+  { name: 'Real Estate', icon: Home },
+  { name: 'Architectural', icon: Building },
+  { name: 'Drone & Aerial', icon: Rocket },
+  { name: 'Sports', icon: Trophy },
+  { name: 'Documentary', icon: Film },
+  { name: 'Fine Art', icon: Sparkles },
+];
+
+const VIDEO_SERVICES = [
+  { name: 'Brand Promos', icon: Target },
+  { name: 'Digital Ad Campaigns', icon: BarChart3 },
+  { name: 'TV Commercials', icon: Tv },
+  { name: 'Theatrical Ads', icon: Film },
+  { name: 'Corporate Documentaries', icon: Building },
+  { name: 'Training & Educational', icon: Laptop },
+  { name: 'Testimonials', icon: Sparkles },
+  { name: 'Wedding Videography', icon: Heart },
+  { name: 'Festival Coverage', icon: Music },
+  { name: 'Event Highlights', icon: Calendar },
+  { name: 'Live Streaming', icon: Globe },
+  { name: 'YouTube Production', icon: MonitorPlay },
+  { name: 'Short-Form Video', icon: Smartphone },
+  { name: 'Music Videos', icon: Music },
+  { name: 'Property Walkthroughs', icon: Home },
+  { name: 'Aerial Drone Video', icon: Rocket },
+  { name: '360° Virtual Tours', icon: Sparkles },
+  { name: 'Motion Graphics', icon: Zap },
+  { name: 'Post-Production', icon: MonitorPlay },
+  { name: 'Documentary Films', icon: Film },
 ];
 
 export default function ServicesPage() {
@@ -128,7 +171,7 @@ export default function ServicesPage() {
           </p>
         </header>
 
-        {/* Sticky Local Navigation - Enhanced Design */}
+        {/* Sticky Local Navigation */}
         <div className="sticky top-16 z-40 bg-background/90 backdrop-blur-xl py-6 mb-24 border-b border-border/50">
           <div className="flex flex-wrap justify-center gap-3 md:gap-6">
             {DETAILED_SERVICES.map((service) => (
@@ -150,8 +193,8 @@ export default function ServicesPage() {
           {DETAILED_SERVICES.map((service, i) => (
             <section key={service.id} id={service.id} className="scroll-mt-48">
               <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                  <div className="lg:col-span-5 space-y-8 animate-fade-up" style={{animationDelay: '100ms'}}>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-20">
+                  <div className="lg:col-span-5 space-y-8">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
                         <service.icon size={28} />
@@ -179,8 +222,7 @@ export default function ServicesPage() {
                     {service.details.map((detail, idx) => (
                       <div 
                         key={idx} 
-                        className="animated-card flex gap-6 p-10 rounded-[2.5rem] bg-secondary/30 group animate-fade-up border-primary/5 hover:border-primary/20 transition-all relative overflow-hidden" 
-                        style={{animationDelay: `${idx * 150 + 200}ms`}}
+                        className="animated-card flex gap-6 p-10 rounded-[2.5rem] bg-secondary/30 group border-primary/5 hover:border-primary/20 transition-all relative overflow-hidden" 
                       >
                         <div className="absolute top-0 left-0 w-1 h-full bg-primary/20 group-hover:bg-primary transition-colors" />
                         <div className="mt-1 flex-shrink-0 w-12 h-12 rounded-2xl bg-background flex items-center justify-center text-primary border border-border group-hover:bg-primary/5 transition-colors">
@@ -194,6 +236,40 @@ export default function ServicesPage() {
                     ))}
                   </div>
                 </div>
+
+                {service.id === 'content' && (
+                  <div className="space-y-20 pt-10 border-t border-border/50">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                      <div className="space-y-8">
+                        <h3 className="font-headline text-2xl font-bold flex items-center gap-3">
+                          <Camera className="text-primary" /> Photography Services
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {PHOTO_SERVICES.map((photo, pIdx) => (
+                            <div key={pIdx} className="flex items-center gap-3 p-4 rounded-xl bg-secondary/20 hover:bg-primary/5 border border-border/30 transition-colors">
+                              <photo.icon size={16} className="text-primary/60" />
+                              <span className="text-sm font-medium">{photo.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="space-y-8">
+                        <h3 className="font-headline text-2xl font-bold flex items-center gap-3">
+                          <Video className="text-primary" /> Videography Services
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {VIDEO_SERVICES.map((video, vIdx) => (
+                            <div key={vIdx} className="flex items-center gap-3 p-4 rounded-xl bg-secondary/20 hover:bg-primary/5 border border-border/30 transition-colors">
+                              <video.icon size={16} className="text-primary/60" />
+                              <span className="text-sm font-medium">{video.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </section>
           ))}
