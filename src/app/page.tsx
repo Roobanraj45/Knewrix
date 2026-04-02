@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {Button} from '@/components/ui/button';
 import {Badge} from '@/components/ui/badge';
-import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Rocket, Award, Users} from 'lucide-react';
+import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Rocket} from 'lucide-react';
 
 export default function Home() {
   const techServices = [
@@ -11,28 +11,28 @@ export default function Home() {
       icon: Globe, 
       title: 'High-Performance Web', 
       desc: 'Ultra-low latency web platforms engineered with Next.js 15. We prioritize SEO dominance.',
-      features: ['Server-Side Excellence', 'SEO Optimization', 'Global Scale']
+      features: ['Server-Side Excellence', 'SEO Optimization']
     },
     { 
       id: '02',
       icon: Smartphone, 
       title: 'Scalable Mobile Apps', 
       desc: 'Native iOS and Android experiences built for user retention.',
-      features: ['Cross-Platform Power', 'User-Centric UX', 'Seamless Integration']
+      features: ['Cross-Platform Power', 'User-Centric UX']
     },
     { 
       id: '03',
       icon: BarChart3, 
       title: 'Digital Marketing', 
       desc: 'ROI-focused acquisition systems utilizing deep analytics.',
-      features: ['Performance Ads', 'Conversion Strategy', 'Data Analytics']
+      features: ['Performance Ads', 'Conversion Strategy']
     },
     { 
       id: '04',
       icon: Video, 
       title: 'Content Creation', 
       desc: 'High-end visual storytelling designed for digital platforms.',
-      features: ['Brand Films', 'Social Content', 'Strategic Narrative']
+      features: ['Brand Films', 'Social Content']
     },
   ];
 
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16 md:gap-24 pb-20">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 md:pt-36 md:pb-20 overflow-hidden">
+      <section className="relative pt-24 pb-12 md:pt-36 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             <Badge variant="outline" className="mb-6 border-primary/40 text-primary bg-primary/5 uppercase tracking-[0.3em] font-bold px-4 py-1.5 rounded-full text-[10px]">
@@ -63,10 +63,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground shadow-xl shadow-primary/10 hover:scale-105 transition-all rounded-xl font-bold px-8">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground shadow-xl shadow-primary/10 transition-all rounded-xl font-bold px-8">
                 <Link href="/contact">Book Audit</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/20 bg-primary/5 hover:bg-primary/10 rounded-xl font-bold px-8">
+              <Button asChild variant="outline" size="lg" className="border-primary/20 bg-primary/5 rounded-xl font-bold px-8">
                 <Link href="/services">Capabilities</Link>
               </Button>
             </div>
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Synergy Section */}
+      {/* Synergy Section - Optimizing LCP */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -111,12 +111,13 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg bg-muted">
               <Image 
                 src="https://picsum.photos/seed/knewrix-strategy/800/450" 
                 alt="Knewrix Strategy" 
-                fill
-                priority
+                width={800}
+                height={450}
+                priority={true} // High priority for LCP improvement
                 className="object-cover"
                 data-ai-hint="Corporate strategy"
               />
@@ -140,43 +141,20 @@ export default function Home() {
               key={i} 
               className="group relative border border-border/50 rounded-[2rem] p-8 flex flex-col bg-card/30 hover:border-primary/30 transition-all" 
             >
-              <service.icon size={24} className="text-primary mb-6 group-hover:scale-110 transition-transform" />
+              <service.icon size={24} className="text-primary mb-6" />
               <h3 className="text-xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
               <p className="text-muted-foreground text-xs leading-relaxed mb-6 flex-grow">
                 {service.desc}
               </p>
-              <div className="space-y-2 pt-4 border-t border-border/50">
-                {service.features.slice(0, 2).map((feat, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-[10px] font-bold text-foreground/80">
-                    <div className="w-1 h-1 rounded-full bg-accent" />
-                    {feat}
-                  </div>
-                ))}
-              </div>
-              <div className="pt-6">
-                <Link href="/services" className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-primary group-hover:translate-x-1 transition-transform">
+              <div className="pt-6 border-t border-border/50">
+                <Link href="/services" className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-primary">
                   Explore <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <div className="bg-secondary/40 p-10 md:p-16 rounded-[3rem] border border-border/50 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6">Ready to scale?</h2>
-          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Join 50+ brands scaling through Knewrix Tech-Creative strategy.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="rounded-xl px-10 font-bold bg-primary text-primary-foreground hover:scale-105 transition-transform">
-              <Link href="/contact">Request Strategy Call</Link>
-            </Button>
-          </div>
         </div>
       </section>
     </div>

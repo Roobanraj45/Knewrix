@@ -34,18 +34,10 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tight;
-  }
 }
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient;
-}
-
-@keyframes floatSlow {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-10px, -10px); }
 }
 
 @keyframes gradient {
@@ -54,25 +46,24 @@
   100% { background-position: 0% 50%; }
 }
 
-.animate-float-slow {
-  animation: floatSlow 10s ease-in-out infinite;
-}
-
 .animate-gradient {
-  animation: gradient 8s ease infinite;
+  animation: gradient 8s linear infinite;
 }
 
-.animate-fade-up {
-  opacity: 0;
-  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Reduced complexity for animations to improve performance */
 .animated-card {
-  @apply transition-all duration-300 hover:scale-[1.01] hover:border-primary/40 hover:shadow-lg;
+  @apply transition-all duration-200 hover:border-primary/30 hover:shadow-md;
+}
+
+/* Optimize image rendering */
+img {
+  content-visibility: auto;
 }
