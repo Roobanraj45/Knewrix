@@ -36,10 +36,10 @@ export default function Home() {
   ];
 
   const statistics = [
-    { label: 'Client Focus', value: 'Absolute' },
-    { label: 'Methodology', value: 'Agile' },
-    { label: 'Tech Stack', value: 'Modern' },
-    { label: 'Growth', value: 'Driven' }
+    { label: 'Core Experts', value: '10+' },
+    { label: 'Projects Delivered', value: '25+' },
+    { label: 'Client Satisfaction', value: '99%' },
+    { label: 'Dedicated Support', value: '24/7' }
   ];
 
   return (
