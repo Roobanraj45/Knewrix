@@ -36,10 +36,10 @@ export default function Home() {
   ];
 
   const statistics = [
-    { label: 'Revenue Generated', value: '$150M+' },
-    { label: 'Active Users Scaled', value: '2.4M' },
-    { label: 'Project Success Rate', value: '98%' },
-    { label: 'Global Awards', value: '12' }
+    { label: 'Client Focus', value: '100%' },
+    { label: 'Methodology', value: 'Agile' },
+    { label: 'Tech Stack', value: 'Modern' },
+    { label: 'Growth', value: 'Driven' }
   ];
 
   return (
@@ -58,7 +58,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
-              Knewrix is a technology firm delivering <span className="text-foreground font-bold">Websites</span>, <span className="text-foreground font-bold">Apps</span>, and <span className="text-foreground font-bold">Marketing</span> for global brands.
+              Knewrix is a technology firm delivering <span className="text-foreground font-bold">Websites</span>, <span className="text-foreground font-bold">Apps</span>, and <span className="text-foreground font-bold">Marketing</span> for ambitious brands.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
