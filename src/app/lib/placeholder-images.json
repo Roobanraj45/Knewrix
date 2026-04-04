@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -47,6 +48,12 @@
       "description": "Premium corporate event setup with branding and immersive lighting.",
       "imageUrl": "https://www.blackpepperevents.com/wp-content/uploads/2025/05/1129965-scaled.jpg",
       "imageHint": "event management"
+    },
+    {
+      "id": "synergy-visual",
+      "description": "Advanced industrial digital technology and connectivity visualization.",
+      "imageUrl": "https://www.business-sweden.com/imagevault/publishedmedia/9mxm5hv3pq7h0urgs1q3/industry-digitaltechnologies-v1.jpg",
+      "imageHint": "digital technology"
     }
   ]
 }

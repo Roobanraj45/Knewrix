@@ -1,9 +1,14 @@
+
 import Link from 'next/link';
+import Image from 'next/image';
 import {Button} from '@/components/ui/button';
 import {Badge} from '@/components/ui/badge';
 import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Rocket, Zap} from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
+  const synergyImage = PlaceHolderImages.find(img => img.id === 'synergy-visual');
+  
   const techServices = [
     { 
       id: '01',
@@ -58,7 +63,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
-              Knewrix is a technology firm delivering <span className="text-foreground font-bold">Websites</span>, <span className="text-foreground font-bold">Apps</span>, and <span className="text-foreground font-bold">Marketing</span> for ambitious brands.
+              Knewrix is a technology firm delivering <span className="text-foreground font-bold">Websites</span>, <span className="text-foreground font-bold">Apps</span>, and <span className="text-foreground font-bold">Digital Marketing</span> for ambitious brands.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -85,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Synergy Section - Abstract Visual */}
+      {/* Synergy Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -111,16 +116,25 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Abstract Visual Design */}
-            <div className="relative aspect-video rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/10 border border-primary/10 flex items-center justify-center">
-              <div className="absolute inset-0 opacity-20" 
-                   style={{backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)', backgroundSize: '24px 24px'}} />
-              <div className="relative z-10 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center animate-pulse">
-                   <Zap size={48} className="text-primary" />
-                </div>
-                <div className="absolute -top-12 -left-12 w-48 h-48 bg-primary/5 blur-3xl rounded-full" />
-                <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-accent/5 blur-3xl rounded-full" />
+            {/* Visual Design */}
+            <div className="relative aspect-video rounded-3xl overflow-hidden bg-secondary/30 border border-border/50 group shadow-2xl">
+              {synergyImage && (
+                <Image 
+                  src={synergyImage.imageUrl}
+                  alt={synergyImage.description}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-ai-hint={synergyImage.imageHint}
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 flex gap-3">
+                 <div className="p-3 rounded-xl bg-background/80 backdrop-blur-md border border-border shadow-lg">
+                   <Zap className="text-primary" size={20} />
+                 </div>
+                 <div className="p-3 rounded-xl bg-background/80 backdrop-blur-md border border-border shadow-lg">
+                   <Rocket className="text-accent" size={20} />
+                 </div>
               </div>
             </div>
           </div>
