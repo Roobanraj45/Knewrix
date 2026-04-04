@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,14 +22,29 @@ export function Footer() {
               Engineering the future of growth. We combine elite software development with cinematic creative strategy and end-to-end event mastery.
             </p>
             <div className="flex items-center gap-4 pt-2">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61587202530144" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" 
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="https://www.instagram.com/knewrixtech/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" 
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
               <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
               <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="Twitter">
                 <Twitter size={18} />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="Instagram">
-                <Instagram size={18} />
               </a>
             </div>
           </div>
