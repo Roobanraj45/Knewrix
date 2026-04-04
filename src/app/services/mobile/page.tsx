@@ -1,35 +1,45 @@
 import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Smartphone, Zap, Smartphone as MobileIcon, ShieldCheck, ArrowRight, Sparkles, Layers, Cpu} from 'lucide-react';
+import {Smartphone, Zap, ShieldCheck, ArrowRight, Sparkles, Layers, Cpu, Smartphone as MobileIcon, Bell, Infinity, Fingerprint} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Custom Mobile Apps',
-  description: 'Native-grade iOS and Android experiences built for high retention and seamless user journeys.',
+  description: 'Native-grade iOS and Android experiences built for high retention, seamless user journeys, and real-time engagement.',
 };
 
 export default function MobileServicePage() {
   const features = [
     {
-      title: 'Cross-Platform Power',
-      desc: 'Building for iOS and Android simultaneously using frameworks that deliver native-grade performance.',
+      title: 'Native-Grade Performance',
+      desc: 'Leveraging modern frameworks to deliver lightning-fast, smooth interactions on both iOS and Android.',
       icon: MobileIcon
     },
     {
       title: 'User-Centric UX',
-      desc: 'Micro-interactions and intuitive navigation patterns designed to maximize daily active usage.',
+      desc: 'Intuitive navigation patterns and micro-interactions designed to maximize daily active usage and user delight.',
       icon: Sparkles
     },
     {
-      title: 'Scalable Backends',
-      desc: 'Real-time data syncing and secure API integrations that handle thousands of concurrent users.',
-      icon: ShieldCheck
+      title: 'Real-Time Engagement',
+      desc: 'Push notifications, live updates, and background syncing to keep your users connected 24/7.',
+      icon: Bell
     },
     {
-      title: 'Offline First',
-      desc: 'Ensuring your app works flawlessly even with poor connectivity, syncing data when back online.',
-      icon: Layers
+      title: 'Enterprise Security',
+      desc: 'Biometric authentication and high-level encryption to ensure user data remains private and secure.',
+      icon: Fingerprint
+    },
+    {
+      title: 'Offline Capabilities',
+      desc: 'Ensuring your app remains functional even in areas with poor connectivity, syncing data seamlessly once online.',
+      icon: Infinity
+    },
+    {
+      title: 'Scalable Architecture',
+      desc: 'Built on robust backends that can handle thousands of concurrent users as your business scales.',
+      icon: ShieldCheck
     }
   ];
 
@@ -37,14 +47,14 @@ export default function MobileServicePage() {
     <div className="pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-24 text-center max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 uppercase tracking-widest font-bold px-4 py-1.5 rounded-full text-[10px]">
-            Core Capability
+          <Badge className="mb-4 bg-accent/10 text-accent border-accent/20 uppercase tracking-widest font-bold px-4 py-1.5 rounded-full text-[10px]">
+            The Palm Presence
           </Badge>
           <h1 className="font-headline text-5xl md:text-8xl font-bold mb-8 italic">
             Mobile <span className="gradient-text not-italic">First.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed">
-            We create native-feeling mobile experiences that prioritize speed, user retention, and fluid interaction.
+            In a mobile-dominated world, your app is your most powerful retention tool. We build experiences that users <span className="text-foreground font-bold">don't just download, but keep using every single day.</span>
           </p>
         </header>
 
@@ -55,7 +65,7 @@ export default function MobileServicePage() {
             <div className="relative z-10 w-full h-full border-2 border-dashed border-accent/20 rounded-2xl flex flex-col items-center justify-center space-y-8">
                <div className="w-24 h-48 rounded-[2.5rem] bg-background border-4 border-border shadow-2xl flex items-center justify-center animate-float relative">
                  <div className="absolute top-4 w-12 h-1 bg-border rounded-full" />
-                 <Smartphone size={48} className="text-accent" />
+                 <MobileIcon size={48} className="text-accent" />
                  <div className="absolute bottom-4 w-4 h-4 rounded-full border-2 border-border" />
                </div>
                <div className="flex gap-4">
@@ -66,19 +76,19 @@ export default function MobileServicePage() {
           </div>
 
           <div className="space-y-8">
-            <h2 className="font-headline text-4xl font-bold">Built for Engagement.</h2>
+            <h2 className="font-headline text-4xl font-bold">Engineering Engagement</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Knewrix, we understand that a mobile app is more than just a shrunk-down website. It's a high-touch environment that needs to be responsive, intuitive, and secure. We focus on building apps that users don't just download, but keep using every single day.
+              Our mobile strategy focuses on fluid performance and intuitive UX. We understand the nuances of both iOS and Android platforms, ensuring that your application feels native and high-performance in every customer's pocket.
             </p>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, i) => (
-                <div key={i} className="flex gap-6 p-8 rounded-3xl bg-secondary/30 border border-border/50 group hover:border-accent/30 transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
-                    <feature.icon size={24} />
+                <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl bg-secondary/30 border border-border/50 group hover:border-accent/30 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                    <feature.icon size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-1">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                    <h4 className="font-bold text-base mb-1">{feature.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -88,13 +98,13 @@ export default function MobileServicePage() {
 
         <section className="bg-accent/5 rounded-[4rem] p-12 md:p-24 border border-accent/10 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-headline text-4xl md:text-6xl font-bold mb-8 italic">Own the <span className="not-italic gradient-text">Palm.</span></h2>
+            <h2 className="font-headline text-4xl md:text-6xl font-bold mb-8 italic">Own the <span className="not-italic gradient-text">Market.</span></h2>
             <p className="text-xl text-muted-foreground mb-12">
-              Ready to take your business into your customers' pockets? Let's build a mobile strategy that converts.
+              Ready to take your business into your customers' pockets? Let's build a mobile strategy that delivers predictable growth.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground px-12 py-8 text-xl font-bold rounded-2xl shadow-2xl shadow-accent/20 hover:scale-105 transition-transform">
               <Link href="/contact" className="flex items-center gap-3">
-                Build My App <ArrowRight size={24} />
+                Build My App Today <ArrowRight size={24} />
               </Link>
             </Button>
           </div>

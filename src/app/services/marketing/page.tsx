@@ -1,35 +1,45 @@
 import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {BarChart3, Rocket, Globe, Target, ArrowRight, Zap, Users, ShieldCheck} from 'lucide-react';
+import {BarChart3, Rocket, Globe, Target, ArrowRight, Zap, Users, ShieldCheck, TrendingUp, Search, MousePointer2} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing & Growth',
-  description: 'Data-led performance marketing systems designed to scale brand reach and maximize ROI.',
+  description: 'Data-led performance marketing systems designed to scale brand reach, maximize ROI, and dominate search results.',
 };
 
 export default function MarketingServicePage() {
   const features = [
     {
       title: 'Performance Optimization',
-      desc: 'Aggressive ROAS-focused campaign management across Meta, Google, and LinkedIn.',
-      icon: Rocket
+      desc: 'Aggressive ROAS-focused campaign management across Meta, Google, and LinkedIn with real-time scaling logic.',
+      icon: TrendingUp
     },
     {
       title: 'Conversion Logic',
-      desc: 'Continuous A/B testing and landing page optimization to squeeze every drop of value from your traffic.',
-      icon: BarChart3
+      desc: 'Continuous A/B testing and landing page optimization to maximize the value of every single visitor.',
+      icon: MousePointer2
     },
     {
       title: 'Global Search Authority',
-      desc: 'Strategic backlink building and content clusters to drive high-intent organic traffic.',
-      icon: Globe
+      desc: 'Strategic backlink building and SEO content clusters to drive high-intent organic traffic at scale.',
+      icon: Search
     },
     {
       title: 'Unified Attribution',
-      desc: 'Deep analytics tracking that connects every marketing dollar to a specific growth outcome.',
+      desc: 'Deep analytics tracking that connects every marketing dollar to a specific growth outcome and lifetime value.',
+      icon: BarChart3
+    },
+    {
+      title: 'Strategic Growth Audits',
+      desc: 'Uncovering the bottlenecks in your funnel and identifying high-leverage opportunities for rapid scale.',
       icon: Target
+    },
+    {
+      title: 'Brand Scaling',
+      desc: 'Comprehensive roadmaps to take your local brand to a global audience with predictable acquisition costs.',
+      icon: Rocket
     }
   ];
 
@@ -38,13 +48,13 @@ export default function MarketingServicePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-24 text-center max-w-4xl mx-auto">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 uppercase tracking-widest font-bold px-4 py-1.5 rounded-full text-[10px]">
-            Growth Strategy
+            The Growth Engine
           </Badge>
           <h1 className="font-headline text-5xl md:text-8xl font-bold mb-8 italic">
             Market <span className="gradient-text not-italic">Dominance.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed">
-            We move beyond simple "ads" to build automated acquisition systems that scale your business predictably.
+            We move beyond simple "ads" to build <span className="text-foreground font-bold">automated acquisition systems</span> that scale your business predictably and profitably.
           </p>
         </header>
 
@@ -64,19 +74,19 @@ export default function MarketingServicePage() {
           </div>
 
           <div className="space-y-8">
-            <h2 className="font-headline text-4xl font-bold">Data-Driven Growth.</h2>
+            <h2 className="font-headline text-4xl font-bold">Data-Driven Domination</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Knewrix, we don't believe in vanity metrics. We focus on ROAS, CAC, and LTV. Our marketing systems are engineered in parallel with your tech, ensuring that every user experience is optimized for conversion from the first click.
+              At Knewrix, we focus on the metrics that matter: ROI, CAC, and LTV. Our marketing systems are engineered in parallel with your tech, ensuring every click is captured in a high-conversion ecosystem.
             </p>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, i) => (
-                <div key={i} className="flex gap-6 p-8 rounded-3xl bg-secondary/30 border border-border/50 group hover:border-primary/30 transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                    <feature.icon size={24} />
+                <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl bg-secondary/30 border border-border/50 group hover:border-primary/30 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <feature.icon size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-1">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                    <h4 className="font-bold text-base mb-1">{feature.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -92,7 +102,7 @@ export default function MarketingServicePage() {
             </p>
             <Button asChild size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-xl font-bold rounded-2xl shadow-2xl shadow-primary/20 hover:scale-105 transition-transform">
               <Link href="/contact" className="flex items-center gap-3">
-                Request Marketing Audit <ArrowRight size={24} />
+                Request Growth Audit <ArrowRight size={24} />
               </Link>
             </Button>
           </div>

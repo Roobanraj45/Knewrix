@@ -1,35 +1,45 @@
 import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Camera, Video, Film, Sparkles, ArrowRight, Zap, Users, Calendar} from 'lucide-react';
+import {Camera, Video, Film, Sparkles, ArrowRight, Zap, Users, Calendar, Image as ImageIcon, PlayCircle} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Cinematic Content Creation',
-  description: 'High-end brand narratives, editorial photography, and cinematic films to establish instant digital trust.',
+  description: 'High-end brand narratives, editorial photography, and cinematic films to establish instant digital trust and brand authority.',
 };
 
 export default function ContentServicePage() {
   const features = [
     {
-      title: 'Photography Excellence',
-      desc: 'From high-spec product imagery to corporate events and editorial fashion shoots.',
+      title: 'Editorial Photography',
+      desc: 'High-spec product imagery, fashion editorial, and corporate portraits designed for premium digital interfaces.',
       icon: Camera
     },
     {
-      title: 'Cinematic Videography',
-      desc: 'Story-driven brand films, theatrical ads, and social media campaign production.',
-      icon: Video
-    },
-    {
-      title: 'Editorial Narrative',
-      desc: 'Developing a unique visual language for your brand that resonates across all platforms.',
+      title: 'Cinematic Brand Films',
+      desc: 'Story-driven films and commercials that capture the soul of your business and build emotional resonance.',
       icon: Film
     },
     {
-      title: 'Brand Activations',
-      desc: 'Coordinating high-impact physical launches with integrated digital coverage.',
+      title: 'Social Ad Production',
+      desc: 'High-converting short-form video and visual content specifically engineered for performance marketing.',
+      icon: PlayCircle
+    },
+    {
+      title: 'Brand Visual Language',
+      desc: 'Developing a unique and consistent aesthetic that defines your brand across all physical and digital touchpoints.',
+      icon: Sparkles
+    },
+    {
+      title: 'Event Activations',
+      desc: 'Full-scale physical launch coverage and live streaming to bridge the gap between real-world and digital impact.',
       icon: Calendar
+    },
+    {
+      title: 'Post-Production Mastery',
+      desc: 'Elite-level editing, color grading, and motion graphics to ensure every frame reflects your brand excellence.',
+      icon: Zap
     }
   ];
 
@@ -38,13 +48,13 @@ export default function ContentServicePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-24 text-center max-w-4xl mx-auto">
           <Badge className="mb-4 bg-accent/10 text-accent border-accent/20 uppercase tracking-widest font-bold px-4 py-1.5 rounded-full text-[10px]">
-            Visual Storytelling
+            The Visual Authority
           </Badge>
           <h1 className="font-headline text-5xl md:text-8xl font-bold mb-8 italic">
             Visual <span className="gradient-text not-italic">Trust.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed">
-            In a world of noise, cinematic imagery is the only way to establish instant brand authority.
+            In a world of digital noise, high-end imagery is the only way to establish <span className="text-foreground font-bold">instant brand authority</span> and emotional connection.
           </p>
         </header>
 
@@ -58,25 +68,25 @@ export default function ContentServicePage() {
                </div>
                <div className="flex gap-4">
                  <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><Video className="text-primary" size={24} /></div>
-                 <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><Sparkles className="text-accent" size={24} /></div>
+                 <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><ImageIcon className="text-accent" size={24} /></div>
                </div>
             </div>
           </div>
 
           <div className="space-y-8">
-            <h2 className="font-headline text-4xl font-bold">Resonance Over Reach.</h2>
+            <h2 className="font-headline text-4xl font-bold">Resonance Over Reach</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Knewrix Studio, we combine technical precision with artistic soul. We don't just "shoot content"; we create visual legacies. Our production quality is designed to live on high-performance interfaces, ensuring a seamless luxury experience for your users.
+              At Knewrix Studio, we combine technical precision with artistic soul. We don't just "produce content"; we create visual legacies. Our production quality is optimized for high-performance interfaces, ensuring a luxury experience.
             </p>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, i) => (
-                <div key={i} className="flex gap-6 p-8 rounded-3xl bg-secondary/30 border border-border/50 group hover:border-accent/30 transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
-                    <feature.icon size={24} />
+                <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl bg-secondary/30 border border-border/50 group hover:border-accent/30 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                    <feature.icon size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-1">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                    <h4 className="font-bold text-base mb-1">{feature.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               ))}
