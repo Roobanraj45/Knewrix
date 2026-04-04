@@ -24,6 +24,18 @@
       "description": "Cross-platform mobile development using modern frameworks.",
       "imageUrl": "https://picsum.photos/seed/mobiledev/800/600",
       "imageHint": "app development"
+    },
+    {
+      "id": "marketing-hero",
+      "description": "High-performance marketing analytics and social media ad management.",
+      "imageUrl": "https://picsum.photos/seed/marketing/1200/800",
+      "imageHint": "digital marketing"
+    },
+    {
+      "id": "marketing-ads",
+      "description": "Meta Ads Manager and Google Ads optimization dashboards.",
+      "imageUrl": "https://picsum.photos/seed/adsdata/800/600",
+      "imageHint": "advertising analytics"
     }
   ]
 }
