@@ -12,6 +12,18 @@
       "description": "Modern UI/UX design process and responsive web layouts.",
       "imageUrl": "https://picsum.photos/seed/webdesign/800/600",
       "imageHint": "ui design"
+    },
+    {
+      "id": "mobile-hero",
+      "description": "High-end mobile app interface design and development environment.",
+      "imageUrl": "https://picsum.photos/seed/mobileapp/1200/800",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "mobile-dev",
+      "description": "Cross-platform mobile development using modern frameworks.",
+      "imageUrl": "https://picsum.photos/seed/mobiledev/800/600",
+      "imageHint": "app development"
     }
   ]
 }
