@@ -1,4 +1,3 @@
-
 import {Metadata} from 'next';
 import Image from 'next/image';
 import {Badge} from '@/components/ui/badge';
@@ -73,7 +72,7 @@ export default function EventServicePage() {
             </div>
           </div>
 
-          <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-secondary/30 border border-border/50 group shadow-2xl">
+          <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden bg-secondary/30 border border-border/50 group shadow-2xl">
             {heroImage && (
               <Image 
                 src={heroImage.imageUrl}

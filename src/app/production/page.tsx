@@ -74,7 +74,7 @@ export default function ProductionPage() {
 
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           {/* Abstract Production Visual */}
-          <div className="relative aspect-square rounded-[3rem] overflow-hidden glossy shadow-2xl bg-gradient-to-tr from-primary/10 via-background to-accent/10 border border-primary/5 flex items-center justify-center p-12">
+          <div className="relative aspect-video rounded-[3rem] overflow-hidden glossy shadow-2xl bg-gradient-to-tr from-primary/10 via-background to-accent/10 border border-primary/5 flex items-center justify-center p-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent opacity-50" />
             <div className="relative z-10 w-full h-full border-2 border-dashed border-primary/20 rounded-2xl flex items-center justify-center">
                <div className="w-32 h-32 rounded-full bg-background border border-primary/20 flex items-center justify-center shadow-2xl animate-pulse">
