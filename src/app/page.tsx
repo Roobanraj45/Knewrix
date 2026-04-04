@@ -36,7 +36,7 @@ export default function Home() {
   ];
 
   const statistics = [
-    { label: 'Client Focus', value: '100%' },
+    { label: 'Client Focus', value: 'Absolute' },
     { label: 'Methodology', value: 'Agile' },
     { label: 'Tech Stack', value: 'Modern' },
     { label: 'Growth', value: 'Driven' }
