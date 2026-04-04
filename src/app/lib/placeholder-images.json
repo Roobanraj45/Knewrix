@@ -1,53 +1,54 @@
 
 {
   "placeholderImages": [
-    {
-      "id": "web-hero",
-      "description": "High-end enterprise web development workstation and interface design.",
-      "imageUrl": "https://picsum.photos/seed/webhero/1200/800",
-      "imageHint": "web development"
-    },
-    {
-      "id": "web-ui-ux",
-      "description": "Modern UI/UX design process and responsive web layouts.",
-      "imageUrl": "https://picsum.photos/seed/webdesign/800/600",
-      "imageHint": "ui design"
-    },
-    {
-      "id": "mobile-hero",
-      "description": "High-end mobile app interface design and development environment.",
-      "imageUrl": "https://picsum.photos/seed/mobileapp/1200/800",
-      "imageHint": "mobile app"
-    },
-    {
-      "id": "mobile-dev",
-      "description": "Cross-platform mobile development using modern frameworks.",
-      "imageUrl": "https://picsum.photos/seed/mobiledev/800/600",
-      "imageHint": "app development"
-    },
-    {
-      "id": "marketing-hero",
-      "description": "High-performance marketing analytics and social media ad management.",
-      "imageUrl": "https://picsum.photos/seed/marketing/1200/800",
-      "imageHint": "digital marketing"
-    },
-    {
-      "id": "marketing-ads",
-      "description": "Meta Ads Manager and Google Ads optimization dashboards.",
-      "imageUrl": "https://picsum.photos/seed/adsdata/800/600",
-      "imageHint": "advertising analytics"
-    },
-    {
-      "id": "content-hero",
-      "description": "Professional cinema camera and studio lighting setup for high-end production.",
-      "imageUrl": "https://picsum.photos/seed/cinemaprod/1200/800",
-      "imageHint": "video production"
-    },
-    {
-      "id": "events-hero",
-      "description": "Premium corporate event setup with branding and immersive lighting.",
-      "imageUrl": "https://picsum.photos/seed/eventspace/1200/800",
-      "imageHint": "event management"
-    }
-  ]
-}
+      {
+            "id": "web-hero",
+                  "description": "High-end enterprise web development workstation and interface design.",
+                        "imageUrl": "https://picsum.photos/seed/webhero/1200/800",
+                              "imageHint": "web development"
+                                  },
+                                      {
+                                            "id": "web-ui-ux",
+                                                  "description": "Modern UI/UX design process and responsive web layouts.",
+                                                        "imageUrl": "https://picsum.photos/seed/webdesign/800/600",
+                                                              "imageHint": "ui design"
+                                                                  },
+                                                                      {
+                                                                            "id": "mobile-hero",
+                                                                                  "description": "High-end mobile app interface design and development environment.",
+                                                                                        "imageUrl": "https://picsum.photos/seed/mobileapp/1200/800",
+                                                                                              "imageHint": "mobile app"
+                                                                                                  },
+                                                                                                      {
+                                                                                                            "id": "mobile-dev",
+                                                                                                                  "description": "Cross-platform mobile development using modern frameworks.",
+                                                                                                                        "imageUrl": "https://picsum.photos/seed/mobiledev/800/600",
+                                                                                                                              "imageHint": "app development"
+                                                                                                                                  },
+                                                                                                                                      {
+                                                                                                                                            "id": "marketing-hero",
+                                                                                                                                                  "description": "High-performance marketing analytics and social media ad management.",
+                                                                                                                                                        "imageUrl": "https://picsum.photos/seed/marketing/1200/800",
+                                                                                                                                                              "imageHint": "digital marketing"
+                                                                                                                                                                  },
+                                                                                                                                                                      {
+                                                                                                                                                                            "id": "marketing-ads",
+                                                                                                                                                                                  "description": "Meta Ads Manager and Google Ads optimization dashboards.",
+                                                                                                                                                                                        "imageUrl": "https://picsum.photos/seed/adsdata/800/600",
+                                                                                                                                                                                              "imageHint": "advertising analytics"
+                                                                                                                                                                                                  },
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                            "id": "content-hero",
+                                                                                                                                                                                                                  "description": "Professional cinema camera and studio lighting setup for high-end production.",
+                                                                                                                                                                                                                        "imageUrl": "https://picsum.photos/seed/cinemaprod/1200/800",
+                                                                                                                                                                                                                              "imageHint": "video production"
+                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                            "id": "events-hero",
+                                                                                                                                                                                                                                                  "description": "Premium corporate event setup with branding and immersive lighting.",
+                                                                                                                                                                                                                                                        "imageUrl": "https://picsum.photos/seed/eventspace/1200/800",
+                                                                                                                                                                                                                                                              "imageHint": "event management"
+                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                    

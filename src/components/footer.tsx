@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
 
@@ -51,7 +50,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/services/marketing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Performance Marketing
+                  Digital Marketing
                 </Link>
               </li>
               <li>

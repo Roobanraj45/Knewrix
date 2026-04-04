@@ -1,4 +1,3 @@
-
 import {Metadata} from 'next';
 import Image from 'next/image';
 import {Badge} from '@/components/ui/badge';
@@ -57,7 +56,7 @@ export default function MarketingServicePage() {
             The Growth Engine
           </Badge>
           <h1 className="font-headline text-5xl md:text-8xl font-bold mb-8 italic leading-tight">
-            Market <span className="gradient-text not-italic">Dominance.</span>
+            Digital <span className="gradient-text not-italic">Marketing.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
             Marketing is no longer just about "getting seen"—it is about <span className="text-foreground font-bold">architecting acquisition systems</span>. At Knewrix, we combine data science with creative psychology to build automated engines that scale your business predictably and profitably.
@@ -125,7 +124,7 @@ export default function MarketingServicePage() {
         <section className="mb-32">
           <div className="mb-16 max-w-2xl">
             <h2 className="font-headline text-3xl md:text-5xl font-bold mb-6">The Growth Engine</h2>
-            <p className="text-lg text-muted-foreground">Our marketing services are engineered to work in parallel with your tech stack, ensuring every dollar spent on acquisition is maximized for conversion and retention.</p>
+            <p className="text-lg text-muted-foreground">Our digital marketing services are engineered to work in parallel with your tech stack, ensuring every dollar spent on acquisition is maximized for conversion and retention.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

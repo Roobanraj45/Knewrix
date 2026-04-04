@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -22,7 +21,7 @@ const NAV_ITEMS = [
     items: [
       {name: 'Websites', href: '/services/websites', icon: Globe},
       {name: 'Mobile Apps', href: '/services/mobile', icon: Smartphone},
-      {name: 'Marketing', href: '/services/marketing', icon: BarChart3},
+      {name: 'Digital Marketing', href: '/services/marketing', icon: BarChart3},
       {name: 'Content Creation', href: '/services/content', icon: Camera},
       {name: 'Event Management', href: '/services/events', icon: PartyPopper},
     ],
