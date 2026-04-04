@@ -1,4 +1,17 @@
 
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "web-hero",
+      "description": "High-end enterprise web development workstation and interface design.",
+      "imageUrl": "https://picsum.photos/seed/webhero/1200/800",
+      "imageHint": "web development"
+    },
+    {
+      "id": "web-ui-ux",
+      "description": "Modern UI/UX design process and responsive web layouts.",
+      "imageUrl": "https://picsum.photos/seed/webdesign/800/600",
+      "imageHint": "ui design"
+    }
+  ]
 }

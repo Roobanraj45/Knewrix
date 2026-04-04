@@ -1,8 +1,11 @@
+
 import {Metadata} from 'next';
+import Image from 'next/image';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Laptop, Zap, Target, Layers, ArrowRight, ShieldCheck, Globe, Cpu, Layout, Code, ShoppingCart, Settings} from 'lucide-react';
+import {Laptop, Target, ArrowRight, ShieldCheck, Cpu, Layout, Code, ShoppingCart, Settings} from 'lucide-react';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
   title: 'Enterprise Websites',
@@ -10,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function WebsitesServicePage() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'web-hero');
+  
   const features = [
     {
       title: 'Custom Web Design',
@@ -59,16 +64,22 @@ export default function WebsitesServicePage() {
         </header>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
-          <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/5 flex items-center justify-center p-12">
-            <div className="absolute inset-0 opacity-10" 
-                 style={{backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)', backgroundSize: '32px 32px'}} />
-            <div className="relative z-10 w-full h-full border-2 border-dashed border-primary/20 rounded-2xl flex flex-col items-center justify-center space-y-8">
-               <div className="w-32 h-32 rounded-3xl bg-background border border-border shadow-2xl flex items-center justify-center animate-float">
-                 <Laptop size={64} className="text-primary" />
-               </div>
+          <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-secondary/30 border border-border/50 group">
+            {heroImage && (
+              <Image 
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+                data-ai-hint={heroImage.imageHint}
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8">
                <div className="flex gap-4">
-                 <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><Cpu className="text-accent" size={24} /></div>
-                 <div className="p-3 rounded-xl bg-background border border-border shadow-sm"><ShieldCheck className="text-primary" size={24} /></div>
+                 <div className="p-3 rounded-xl bg-background/80 backdrop-blur-sm border border-border shadow-sm"><Cpu className="text-accent" size={24} /></div>
+                 <div className="p-3 rounded-xl bg-background/80 backdrop-blur-sm border border-border shadow-sm"><ShieldCheck className="text-primary" size={24} /></div>
                </div>
             </div>
           </div>
