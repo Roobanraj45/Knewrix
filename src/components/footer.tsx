@@ -39,22 +39,22 @@ export function Footer() {
             <h4 className="font-headline font-bold text-lg mb-6 tracking-tight italic">Expertise.</h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/services#websites" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/services/websites" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Enterprise Websites
                 </Link>
               </li>
               <li>
-                <Link href="/services#mobile" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/services/mobile" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Mobile Application
                 </Link>
               </li>
               <li>
-                <Link href="/services#marketing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/services/marketing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Performance Marketing
                 </Link>
               </li>
               <li>
-                <Link href="/services#content" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/services/content" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Content Creation
                 </Link>
               </li>
