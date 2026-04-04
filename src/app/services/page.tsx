@@ -1,12 +1,13 @@
+
 import {Metadata} from 'next';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Globe, Smartphone, BarChart3, Camera, Laptop, ArrowRight} from 'lucide-react';
+import {Globe, Smartphone, BarChart3, Camera, Laptop, ArrowRight, PartyPopper} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Our Services',
-  description: 'Enterprise Web Development, Custom Mobile Apps, Performance Marketing, and Cinematic Content Creation.',
+  title: 'Our Services | Knewrix Digital Capabilities',
+  description: 'Enterprise Web Development, Custom Mobile Apps, Performance Marketing, Cinematic Content Creation, and End-to-End Event Management.',
 };
 
 const SERVICE_DIRECTORY = [
@@ -45,6 +46,15 @@ const SERVICE_DIRECTORY = [
     href: '/services/content',
     color: 'text-accent',
     bg: 'bg-accent/5'
+  },
+  {
+    id: 'events',
+    title: 'Event Management',
+    subtitle: 'End-to-End Planning',
+    icon: PartyPopper,
+    href: '/services/events',
+    color: 'text-primary',
+    bg: 'bg-primary/5'
   }
 ];
 
@@ -60,7 +70,7 @@ export default function ServicesPage() {
             Engineering <span className="gradient-text not-italic">Growth.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed">
-            From architecture to acquisition, we provide a unified approach to scaling global brands. Select a capability to explore our deep expertise.
+            From digital architecture to physical experiences, we provide a unified approach to scaling global brands. Select a capability to explore our deep expertise.
           </p>
         </header>
 
@@ -93,7 +103,7 @@ export default function ServicesPage() {
         <section className="mt-32 bg-secondary/30 rounded-[3rem] p-12 md:p-20 text-center border border-border/50">
           <h2 className="font-headline text-3xl md:text-5xl font-bold mb-8">Not sure where to start?</h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Book a complimentary Growth Audit. We'll analyze your current digital landscape and identify the highest leverage opportunities for scale.
+            Book a complimentary Growth Audit. We'll analyze your current digital and physical footprint and identify the highest leverage opportunities for scale.
           </p>
           <Button asChild size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-xl font-bold rounded-2xl shadow-xl shadow-primary/20">
             <Link href="/contact">Book My Audit</Link>

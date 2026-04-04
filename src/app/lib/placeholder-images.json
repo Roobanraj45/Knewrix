@@ -36,6 +36,18 @@
       "description": "Meta Ads Manager and Google Ads optimization dashboards.",
       "imageUrl": "https://picsum.photos/seed/adsdata/800/600",
       "imageHint": "advertising analytics"
+    },
+    {
+      "id": "content-hero",
+      "description": "Professional cinema camera and studio lighting setup for high-end production.",
+      "imageUrl": "https://picsum.photos/seed/cinemaprod/1200/800",
+      "imageHint": "video production"
+    },
+    {
+      "id": "events-hero",
+      "description": "Premium corporate event setup with branding and immersive lighting.",
+      "imageUrl": "https://picsum.photos/seed/eventspace/1200/800",
+      "imageHint": "event management"
     }
   ]
 }

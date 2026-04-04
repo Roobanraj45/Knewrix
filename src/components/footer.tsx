@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
 
@@ -19,7 +20,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              Engineering the future of growth. We combine elite software development with cinematic creative strategy to scale global brands.
+              Engineering the future of growth. We combine elite software development with cinematic creative strategy and end-to-end event mastery.
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a href="#" className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" aria-label="LinkedIn">
@@ -56,6 +57,11 @@ export function Footer() {
               <li>
                 <Link href="/services/content" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Content Creation
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/events" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Event Management
                 </Link>
               </li>
             </ul>

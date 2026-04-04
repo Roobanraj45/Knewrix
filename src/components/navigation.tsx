@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -5,7 +6,7 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {cn} from '@/lib/utils';
 import {Button} from '@/components/ui/button';
-import {Menu, X, ChevronDown, Globe, Smartphone, BarChart3, Camera} from 'lucide-react';
+import {Menu, X, ChevronDown, Globe, Smartphone, BarChart3, Camera, PartyPopper} from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +24,7 @@ const NAV_ITEMS = [
       {name: 'Mobile Apps', href: '/services/mobile', icon: Smartphone},
       {name: 'Marketing', href: '/services/marketing', icon: BarChart3},
       {name: 'Content Creation', href: '/services/content', icon: Camera},
+      {name: 'Event Management', href: '/services/events', icon: PartyPopper},
     ],
   },
   {name: 'Studio', href: '/production'},
