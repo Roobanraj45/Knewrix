@@ -7,8 +7,9 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Loader2, Mail, Phone, Calendar, Building, MessageSquare, Search, Filter, MapPin, Tag, FileText } from 'lucide-react';
+import { Loader2, Mail, Phone, Calendar, Building, MessageSquare, Search, Filter, MapPin, Tag, FileText, Users } from 'lucide-react';
 import { format } from 'date-fns';
+import { Separator } from '@/components/ui/separator';
 
 type EnquiryData = {
   id: string;
@@ -291,5 +292,3 @@ export default function EnquiriesPage() {
     </div>
   );
 }
-
-import { Separator } from '@/components/ui/separator';
