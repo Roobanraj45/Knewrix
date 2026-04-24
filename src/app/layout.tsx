@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     template: '%s | Knewrix',
   },
   description: 'Knewrix is a premier software house specializing in high-performance Websites, Mobile Apps, and Digital Marketing to scale ambitious brands. Experts in TNSTC, GSRTC, Chaloyaar, and Enterprise IT Ticketing systems.',
+  metadataBase: new URL('https://knewrix.com'),
   keywords: [
     'Knewrix',
     'Knewrix Private Limited',
@@ -65,9 +66,7 @@ export const metadata: Metadata = {
     'Priya Jewellery Marketing',
   ],
   icons: {
-    icon: [
-      { url: '/knwerix_header.png', href: '/knwerix_header.png' },
-    ],
+    icon: '/knwerix_header.png',
     shortcut: '/knwerix_header.png',
     apple: '/knwerix_header.png',
   },
