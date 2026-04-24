@@ -115,9 +115,9 @@ export function Footer() {
               <div className="flex gap-4">
                 <MapPin className="text-primary flex-shrink-0" size={18} />
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  No 2, Sri Abhirami Nagar,<br />
-                  Chinna Koladi Block 1,<br />
-                  Chennai - 600077
+                  Senjoshosp School Street,<br />
+                  Near Poonamallee Bus Stand,<br />
+                  Poonamallee, Chennai - 600056
                 </p>
               </div>
               <div className="flex items-center gap-4">
