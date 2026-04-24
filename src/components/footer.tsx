@@ -116,8 +116,9 @@ export function Footer() {
                 <MapPin className="text-primary flex-shrink-0" size={18} />
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Senjoshosp School Street,<br />
-                  Near Poonamallee Bus Stand,<br />
-                  Poonamallee, Chennai - 600056
+                  Near Poonamallee Bus Stand (Bus Entry Point),<br />
+                  Poonamallee, Chennai - 600056,<br />
+                  Tamil Nadu, India
                 </p>
               </div>
               <div className="flex items-center gap-4">
