@@ -101,7 +101,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
       { url: '/knwerix_header.png', type: 'image/png' },
     ],
     apple: [

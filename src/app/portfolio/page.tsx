@@ -1,4 +1,3 @@
-
 import {Metadata} from 'next';
 import {Card, CardContent} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
@@ -8,8 +7,9 @@ import Link from 'next/link';
 import { PROJECTS } from '@/lib/portfolio-data';
 
 export const metadata: Metadata = {
-  title: 'Our Success Stories',
-  description: 'Explore the high-impact projects where Knewrix delivered massive ROI through unified tech and creative strategy.',
+  title: 'Our Success Stories | Knewrix Portfolio',
+  description: 'Explore our high-impact projects including TNSTC, Kandhan Solar, and Subramanya Swami Realty. We deliver massive ROI through unified tech and growth strategy.',
+  keywords: 'TNSTC App, GSRTC App, Kandhan Solar Marketing, Subramanya Swami Realty growth, Priya Jewellery Digital Marketing, Knewrix Success Stories',
 };
 
 const CATEGORIES = [
@@ -31,7 +31,7 @@ export default function PortfolioPage() {
             Works <span className="not-italic gradient-text">& Growth.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
-            From state-wide government transit apps to precision marketing for high-value real estate and energy.
+            From state-wide government transit apps to precision marketing for high-value real estate, energy, and luxury retail.
           </p>
         </header>
 
