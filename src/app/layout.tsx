@@ -64,13 +64,9 @@ export const metadata: Metadata = {
     'Subramanya Swami Realty',
     'Priya Jewellery Marketing',
   ],
-  authors: [{ name: 'Knewrix Private Limited' }],
-  creator: 'Knewrix Private Limited',
-  publisher: 'Knewrix Private Limited',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  icons: {
+    icon: '/knwerix_header.png',
+    apple: '/knwerix_header.png',
   },
   openGraph: {
     title: 'Knewrix | Software House & Digital Growth Partner',
@@ -79,7 +75,7 @@ export const metadata: Metadata = {
     siteName: 'Knewrix',
     images: [
       {
-        url: 'https://picsum.photos/seed/knewrix-og/1200/630',
+        url: '/knwerix_header.png',
         width: 1200,
         height: 630,
         alt: 'Knewrix Digital Growth Partner',
@@ -92,20 +88,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Knewrix | Software House & Digital Growth Partner',
     description: 'High-performance Websites, Mobile Apps, and Digital Marketing for ambitious global brands.',
-    images: ['https://picsum.photos/seed/knewrix-twitter/1200/630'],
+    images: ['/knwerix_header.png'],
     creator: '@knewrix',
   },
   robots: {
     index: true,
     follow: true,
-  },
-  icons: {
-    icon: [
-      { url: '/knwerix_header.png', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/knwerix_header.png' },
-    ],
   },
 };
 

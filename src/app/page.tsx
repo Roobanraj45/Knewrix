@@ -1,10 +1,15 @@
-
 import Link from 'next/link';
 import Image from 'next/image';
+import {Metadata} from 'next';
 import {Button} from '@/components/ui/button';
 import {Badge} from '@/components/ui/badge';
 import {ArrowRight, Globe, Smartphone, Video, Target, ShieldCheck, BarChart3, Rocket, Zap} from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+export const metadata: Metadata = {
+  title: 'Knewrix | Engineering the Future of Growth',
+  description: 'Digital growth partner providing high-performance Web, Mobile Apps, and Performance Marketing for brands like TNSTC, GSRTC, and Kandhan Solar.',
+};
 
 export default function Home() {
   const synergyImage = PlaceHolderImages.find(img => img.id === 'synergy-visual');
