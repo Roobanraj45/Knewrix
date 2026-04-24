@@ -83,7 +83,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground uppercase tracking-wider font-bold">Innovation Hub</p>
-                    <p className="text-base font-medium">Senjoshosp School Street, Near Poonamallee Bus Stand (Bus Entry Point), Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
+                    <p className="text-base font-medium">ST.JOSEPH'S School Street, Near Poonamallee Bus Stand (Bus Entry Point), Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 p-6 rounded-2xl bg-secondary/30 border border-border/50 hover:border-primary/50 transition-colors">
