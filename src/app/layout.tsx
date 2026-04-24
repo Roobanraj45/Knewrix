@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     'Government Bus Booking App',
     'High-Performance Digital Ads',
     'Meta Ads Specialist India',
+    'Kandhan Solar',
+    'Subramanya Swami Realty',
+    'Priya Jewellery Marketing',
   ],
   authors: [{ name: 'Knewrix Private Limited' }],
   creator: 'Knewrix Private Limited',
@@ -97,9 +100,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/knwerix_header.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/knwerix_header.png' },
+    ],
   },
 };
 
