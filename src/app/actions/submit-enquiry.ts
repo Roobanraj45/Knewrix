@@ -1,9 +1,6 @@
 
 'use server';
 
-import { db } from '@/lib/external-firebase';
-import { ref, push, set } from 'firebase/database';
-
 export type EnquiryData = {
   name: string;
   email: string;
@@ -20,8 +17,8 @@ export type EnquiryData = {
 
 export async function submitEnquiry(data: Omit<EnquiryData, 'status' | 'created_at'>) {
   try {
-    const enquiriesRef = ref(db, 'enquiries');
-    const newEnquiryRef = push(enquiriesRef);
+    // Using the Firebase REST API endpoint for the provided database URL
+    const databaseUrl = 'https://studio-2506567351-f45ca-default-rtdb.firebaseio.com/enquiries.json';
     
     const enquiry: EnquiryData = {
       ...data,
@@ -29,7 +26,20 @@ export async function submitEnquiry(data: Omit<EnquiryData, 'status' | 'created_
       created_at: new Date().toISOString(),
     };
 
-    await set(newEnquiryRef, enquiry);
+    const response = await fetch(databaseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(enquiry),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Firebase REST API error:', errorText);
+      return { success: false, error: 'Failed to submit enquiry' };
+    }
+
     return { success: true };
   } catch (error) {
     console.error('Error submitting enquiry:', error);
