@@ -2,7 +2,7 @@ import {Metadata} from 'next';
 import {Card, CardContent} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Globe, Smartphone, BarChart3, Camera, PartyPopper, ArrowUpRight, CheckCircle2, Zap} from 'lucide-react';
+import {Globe, Smartphone, BarChart3, Camera, PartyPopper, ArrowUpRight, CheckCircle2, Zap, Cpu} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -11,68 +11,67 @@ export const metadata: Metadata = {
 };
 
 const CATEGORIES = [
-  { id: 'web', name: 'Web Development', icon: Globe },
   { id: 'mobile', name: 'Mobile Applications', icon: Smartphone },
+  { id: 'web', name: 'Web Development', icon: Globe },
   { id: 'marketing', name: 'Digital Marketing', icon: BarChart3 },
-  { id: 'content', name: 'Content Production', icon: Camera },
-  { id: 'events', name: 'Event Management', icon: PartyPopper },
+  { id: 'events', name: 'IT Servicing & Events', icon: PartyPopper },
 ];
 
 const PROJECTS = [
   {
-    category: 'web',
-    client: 'EcoScale Global',
-    type: 'Enterprise Platform',
-    link: 'https://ecoscale.io',
-    problem: 'Needed a scalable SaaS infrastructure to handle high-concurrency agricultural data across 12 countries.',
-    solution: 'Engineered a Next.js 15 powerhouse with a globally distributed Edge backend and real-time data sync.',
-    results: 'Reached 50k+ users within 3 months; 40% reduction in server latency.',
-    tech: ['Next.js', 'PostgreSQL', 'Redis', 'Tailwind'],
-    color: 'from-blue-500/10 to-primary/5'
+    category: 'mobile',
+    client: 'TNSTC App',
+    type: 'Govt. Transit Super-App',
+    link: '#',
+    problem: 'Needed a robust system for intra-state and long-distance government bus booking in Tamil Nadu.',
+    solution: 'Engineered a high-concurrency mobile application for TNSTC & SETC bus ticket reservations.',
+    results: 'Enabled real-time seat availability, route tracking, and automated booking/cancellations.',
+    tech: ['React Native', 'Real-time APIs', 'Payment Integration'],
+    color: 'from-blue-600/10 to-primary/5'
   },
   {
     category: 'mobile',
-    client: 'Lumina EdTech',
-    type: 'Learning Super-App',
-    link: 'https://lumina.edu',
-    problem: 'Struggling with student retention on mobile due to poor offline capabilities and slow load times.',
-    solution: 'Built a high-performance React Native app with an offline-first sync engine and custom video player.',
-    results: 'Day 30 retention improved by 65%; App Store rating 4.8/5.',
-    tech: ['React Native', 'Kotlin', 'Firebase', 'Mux'],
-    color: 'from-primary/10 to-accent/5'
-  },
-  {
-    category: 'marketing',
-    client: 'Aura Luxury Fashion',
-    type: 'Growth Performance',
-    link: 'https://aurafashion.com',
-    problem: 'Stagnant revenue with high customer acquisition costs (CAC) on Meta Ads.',
-    solution: 'Implemented full-funnel Meta Ads strategy with CAPI integration and psychological creative hooks.',
-    results: '5.4x ROAS achieved; CAC reduced by 32% in 45 days.',
-    tech: ['Meta CAPI', 'Analytics', 'A/B Testing'],
-    color: 'from-accent/10 to-yellow-500/5'
-  },
-  {
-    category: 'content',
-    client: 'Titan Logistics',
-    type: 'Brand Documentary',
+    client: 'GSRTC App',
+    type: 'State Transport App',
     link: '#',
-    problem: 'Lacked visual authority to close multi-million dollar enterprise contracts.',
-    solution: 'Produced a cinematic 4K brand film and editorial photoshoot showcasing global operations.',
-    results: 'Closed $2.4M in new contracts post-launch; 300% increase in LinkedIn engagement.',
-    tech: ['8K Production', 'Color Grading', 'Motion Graphics'],
-    color: 'from-purple-500/10 to-primary/5'
+    problem: 'Required a reliable mobile interface for Gujarat state transport services.',
+    solution: 'Built a specialized booking engine with live bus status tracking and seat reservation logic.',
+    results: 'Streamlined state-wide bus travel for millions of daily commuters in Gujarat.',
+    tech: ['Flutter', 'Live Tracking', 'GSRTC API'],
+    color: 'from-orange-500/10 to-accent/5'
+  },
+  {
+    category: 'web',
+    client: 'Chaloyaar',
+    type: 'Travel Booking Aggregator',
+    link: '#',
+    problem: 'The market needed a unified private travel platform for bus, hotel, and flight bookings across India.',
+    solution: 'Developed an end-to-end travel aggregator with discount engines and multiple booking modules.',
+    results: 'Successfully scaled as a versatile private travel booking hub with massive daily traffic.',
+    tech: ['Next.js', 'RedBus API', 'Flight Data Sync'],
+    color: 'from-green-500/10 to-primary/5'
+  },
+  {
+    category: 'web',
+    client: 'AmazoPrint',
+    type: 'Custom Printing E-commerce',
+    link: '#',
+    problem: 'Businesses lacked a seamless online solution for individual and bulk custom printing orders.',
+    solution: 'Architected an online printing store allowing users to upload designs for T-shirts, mugs, and banners.',
+    results: 'Automated order workflows from design upload to production for corporate and personal gifting.',
+    tech: ['E-commerce', 'Image Processing', 'Workflow Automation'],
+    color: 'from-purple-500/10 to-accent/5'
   },
   {
     category: 'events',
-    client: 'Vortex Soft',
-    type: 'IT Product Launch',
+    client: 'TNSTC ETM Systems',
+    type: 'Enterprise IT Servicing',
     link: '#',
-    problem: 'Needed a high-impact launch event for their AI suite to impress global VCs.',
-    solution: 'End-to-end planning of a 200-guest immersive event with theme-based setup and live-stream production.',
-    results: 'Secured $10M Series A funding during the launch; 100% attendee satisfaction score.',
-    tech: ['Logistics', 'Branding', 'Live Streaming'],
-    color: 'from-primary/5 to-secondary/30'
+    problem: 'Manual bus ticketing in Tamil Nadu led to revenue leakage and passenger data errors.',
+    solution: 'Implemented Electronic Ticketing Machines (ETM) with automated fare calculation and instant printing.',
+    results: 'Eliminated manual errors; providing real-time daily revenue and passenger data tracking across TN.',
+    tech: ['ETM Integration', 'Revenue Analytics', 'Data Security'],
+    color: 'from-primary/10 to-secondary/30'
   }
 ];
 
@@ -88,7 +87,7 @@ export default function PortfolioPage() {
             Works <span className="not-italic gradient-text">& Growth.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
-            We don't just deliver projects; we architect competitive advantages. Explore our high-impact case studies across five core digital and physical disciplines.
+            From state-wide government transit apps to complex enterprise IT systems, we architect competitive advantages.
           </p>
         </header>
 
@@ -140,11 +139,13 @@ export default function PortfolioPage() {
                            </div>
                         </div>
 
-                        <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <Button asChild size="icon" variant="secondary" className="rounded-full shadow-2xl">
-                            <Link href={project.link} target="_blank"><ArrowUpRight size={20} /></Link>
-                          </Button>
-                        </div>
+                        {project.link !== '#' && (
+                          <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Button asChild size="icon" variant="secondary" className="rounded-full shadow-2xl">
+                              <Link href={project.link} target="_blank"><ArrowUpRight size={20} /></Link>
+                            </Button>
+                          </div>
+                        )}
                       </div>
 
                       <CardContent className="p-10 space-y-8 flex-grow">
@@ -164,7 +165,7 @@ export default function PortfolioPage() {
                         </div>
                         
                         <div className="pt-6 border-t border-border/50 flex justify-between items-center">
-                          <p className="text-xs text-muted-foreground font-medium italic">Integrated growth solution by Knewrix.</p>
+                          <p className="text-xs text-muted-foreground font-medium italic">High-performance solution by Knewrix.</p>
                           {project.link !== '#' && (
                             <Button asChild variant="link" className="text-primary font-bold gap-2 p-0">
                               <Link href={project.link} target="_blank">
