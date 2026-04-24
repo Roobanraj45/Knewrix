@@ -1,15 +1,15 @@
+
 'use client';
 
 import * as React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Loader2, Mail, Phone, Calendar, Building, MessageSquare, Search, Filter, MapPin, Tag, FileText, Users } from 'lucide-react';
+import { Loader2, Calendar, Building, Search, Filter, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
-import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
 
 type EnquiryData = {
   id: string;
@@ -31,7 +31,6 @@ export default function EnquiriesPage() {
   const [error, setError] = React.useState<string | null>(null);
   const [searchQuery, setSearchQuery] = React.useState('');
   const [typeFilter, setTypeFilter] = React.useState<string>('all');
-  const [selectedEnquiry, setSelectedEnquiry] = React.useState<EnquiryData | null>(null);
 
   const fetchEnquiries = React.useCallback(async () => {
     try {
@@ -133,161 +132,67 @@ export default function EnquiriesPage() {
             </div>
           </Card>
         ) : (
-          <div className="grid gap-8">
-            <Card className="border-border/50 bg-card overflow-hidden rounded-[2rem] shadow-xl">
-              <Table>
-                <TableHeader className="bg-secondary/50">
-                  <TableRow>
-                    <TableHead className="font-bold">Date Received</TableHead>
-                    <TableHead className="font-bold">Lead Details</TableHead>
-                    <TableHead className="font-bold">Organization</TableHead>
-                    <TableHead className="font-bold">Category</TableHead>
-                    <TableHead className="font-bold">Status</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {filteredEnquiries.map((enquiry) => (
-                    <TableRow 
-                      key={enquiry.id} 
-                      className="hover:bg-primary/5 transition-colors group cursor-pointer" 
-                      onClick={() => setSelectedEnquiry(enquiry)}
-                    >
-                      <TableCell className="font-medium whitespace-nowrap">
-                        <div className="flex items-center gap-2">
-                          <Calendar size={14} className="text-primary" />
-                          {enquiry.created_at ? format(new Date(enquiry.created_at), 'MMM dd, yyyy') : 'N/A'}
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div className="space-y-1">
-                          <p className="font-bold text-foreground group-hover:text-primary transition-colors">{enquiry.name}</p>
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <Mail size={12} /> {enquiry.email}
-                          </div>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        {enquiry.company_name ? (
-                          <div className="flex items-center gap-2 text-sm font-medium">
-                            <Building size={14} className="text-primary/60" />
-                            {enquiry.company_name}
-                          </div>
-                        ) : <span className="text-muted-foreground italic text-xs">Individual</span>}
-                      </TableCell>
-                      <TableCell>
-                        <Badge variant="outline" className="capitalize bg-background text-[10px] font-bold tracking-wider">
-                          {enquiry.enquiry_type || 'General'}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <Badge className="bg-accent text-accent-foreground font-bold text-[10px] rounded-sm">
-                          {enquiry.status || 'New'}
-                        </Badge>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Card>
-          </div>
-        )}
-
-        {/* Detailed View Modal */}
-        <Dialog open={!!selectedEnquiry} onOpenChange={(open) => !open && setSelectedEnquiry(null)}>
-          <DialogContent className="max-w-3xl rounded-[2.5rem] p-0 overflow-hidden border-none shadow-2xl">
-            {selectedEnquiry && (
-              <div className="flex flex-col">
-                <div className="bg-primary p-8 text-primary-foreground relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '16px 16px'}} />
-                  <DialogHeader className="relative z-10 text-left">
-                    <div className="flex justify-between items-start mb-4">
-                      <Badge className="bg-white text-primary font-bold uppercase text-[10px] tracking-widest">{selectedEnquiry.enquiry_type}</Badge>
-                      <Badge className="bg-accent text-accent-foreground font-bold uppercase text-[10px] tracking-widest">{selectedEnquiry.status}</Badge>
-                    </div>
-                    <DialogTitle className="text-3xl font-bold tracking-tight mb-1">{selectedEnquiry.name}</DialogTitle>
-                    <DialogDescription className="text-primary-foreground/80 font-medium flex items-center gap-2">
-                      <Calendar size={14} /> Received on {format(new Date(selectedEnquiry.created_at), 'MMMM dd, yyyy @ HH:mm')}
-                    </DialogDescription>
-                  </DialogHeader>
-                </div>
-
-                <div className="p-8 space-y-8 bg-background max-h-[70vh] overflow-y-auto">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <section className="space-y-4">
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                        <Users size={14} className="text-primary" /> Contact Profile
-                      </h4>
-                      <div className="space-y-3 bg-secondary/30 p-4 rounded-2xl border border-border/50">
-                        <div className="flex items-center gap-3">
-                          <Mail size={16} className="text-primary" />
-                          <span className="text-sm font-medium">{selectedEnquiry.email}</span>
-                        </div>
-                        {selectedEnquiry.phone && (
-                          <div className="flex items-center gap-3">
-                            <Phone size={16} className="text-primary" />
-                            <span className="text-sm font-medium">{selectedEnquiry.phone}</span>
-                          </div>
-                        )}
-                        {selectedEnquiry.address && (
-                          <div className="flex items-center gap-3">
-                            <MapPin size={16} className="text-primary" />
-                            <span className="text-sm font-medium leading-relaxed">{selectedEnquiry.address}</span>
-                          </div>
-                        )}
-                      </div>
-                    </section>
-
-                    <section className="space-y-4">
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                        <Building size={14} className="text-primary" /> Business Context
-                      </h4>
-                      <div className="space-y-3 bg-secondary/30 p-4 rounded-2xl border border-border/50">
-                        <div className="flex items-center gap-3">
-                          <Building size={16} className="text-primary" />
-                          <span className="text-sm font-bold">{selectedEnquiry.company_name || 'Individual Inquiry'}</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <Tag size={16} className="text-primary" />
-                          <span className="text-sm font-medium">Service: <span className="capitalize">{selectedEnquiry.enquiry_type || 'General'}</span></span>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-
-                  <section className="space-y-4">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                      <FileText size={14} className="text-primary" /> Enquiry Intelligence
-                    </h4>
-                    <div className="space-y-4 bg-secondary/30 p-6 rounded-[2rem] border border-border/50">
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Subject</p>
-                        <p className="text-lg font-bold">{selectedEnquiry.subject || 'N/A'}</p>
-                      </div>
-                      <Separator className="bg-border/50" />
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
-                          <MessageSquare size={12} /> Detailed Requirements
-                        </p>
-                        <div className="text-sm text-muted-foreground leading-relaxed italic bg-background/50 p-4 rounded-xl border-l-4 border-primary">
-                          "{selectedEnquiry.message}"
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-
-                <div className="p-6 bg-secondary/10 border-t border-border/50 flex justify-end gap-3">
-                  <a 
-                    href={`mailto:${selectedEnquiry.email}`}
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
+          <Card className="border-border/50 bg-card overflow-hidden rounded-[2rem] shadow-xl">
+            <Table>
+              <TableHeader className="bg-secondary/50">
+                <TableRow>
+                  <TableHead className="font-bold">Date Received</TableHead>
+                  <TableHead className="font-bold">Lead Details</TableHead>
+                  <TableHead className="font-bold">Organization</TableHead>
+                  <TableHead className="font-bold">Category</TableHead>
+                  <TableHead className="font-bold">Status</TableHead>
+                  <TableHead className="font-bold text-right">Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {filteredEnquiries.map((enquiry) => (
+                  <TableRow 
+                    key={enquiry.id} 
+                    className="hover:bg-primary/5 transition-colors group"
                   >
-                    <Mail size={16} /> Reply to Lead
-                  </a>
-                </div>
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
+                    <TableCell className="font-medium whitespace-nowrap">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={14} className="text-primary" />
+                        {enquiry.created_at ? format(new Date(enquiry.created_at), 'MMM dd, yyyy') : 'N/A'}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="space-y-1">
+                        <p className="font-bold text-foreground">{enquiry.name}</p>
+                        <p className="text-xs text-muted-foreground">{enquiry.email}</p>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      {enquiry.company_name ? (
+                        <div className="flex items-center gap-2 text-sm font-medium">
+                          <Building size={14} className="text-primary/60" />
+                          {enquiry.company_name}
+                        </div>
+                      ) : <span className="text-muted-foreground italic text-xs">Individual</span>}
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant="outline" className="capitalize bg-background text-[10px] font-bold tracking-wider">
+                        {enquiry.enquiry_type || 'General'}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <Badge className="bg-accent text-accent-foreground font-bold text-[10px] rounded-sm">
+                        {enquiry.status || 'New'}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Button asChild variant="ghost" size="sm" className="hover:bg-primary hover:text-white rounded-full group">
+                        <Link href={`/admin/enquiries/${enquiry.id}`} className="flex items-center gap-2">
+                          Manage <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Card>
+        )}
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
+
 import {Metadata} from 'next';
 import {Card, CardContent} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Globe, Smartphone, BarChart3, Camera, PartyPopper, ArrowUpRight, CheckCircle2, Zap, Sun, Building2, Gem} from 'lucide-react';
+import {Globe, Smartphone, BarChart3, PartyPopper, ArrowUpRight, CheckCircle2, Zap} from 'lucide-react';
 import Link from 'next/link';
+import { PROJECTS } from '@/lib/portfolio-data';
 
 export const metadata: Metadata = {
   title: 'Our Success Stories',
@@ -15,97 +17,6 @@ const CATEGORIES = [
   { id: 'marketing', name: 'Digital Marketing & Growth', icon: BarChart3 },
   { id: 'web', name: 'Web Development', icon: Globe },
   { id: 'events', name: 'IT Servicing & Events', icon: PartyPopper },
-];
-
-const PROJECTS = [
-  {
-    category: 'mobile',
-    client: 'TNSTC App',
-    type: 'Govt. Transit Super-App',
-    link: '#',
-    problem: 'Official app for Tamil Nadu government buses. Needed a robust system for intra-state and long-distance bus booking.',
-    solution: 'Engineered a high-concurrency mobile application for ticket reservations, routes, timings, and seat availability tracking.',
-    results: 'Enabled real-time seat availability and automated booking/cancellations for millions of TNSTC & SETC commuters.',
-    tech: ['React Native', 'Real-time APIs', 'Payment Integration'],
-    color: 'from-blue-600/10 to-primary/5'
-  },
-  {
-    category: 'mobile',
-    client: 'GSRTC App',
-    type: 'State Transport App',
-    link: '#',
-    problem: 'Government bus booking app for Gujarat. Required a reliable interface for schedules and live bus status.',
-    solution: 'Built a specialized booking engine with live tracking and seat reservation logic focused on Gujarat state transport.',
-    results: 'Streamlined state-wide bus travel for millions of daily commuters with easy booking management.',
-    tech: ['Flutter', 'Live Tracking', 'GSRTC API'],
-    color: 'from-orange-500/10 to-accent/5'
-  },
-  {
-    category: 'marketing',
-    client: 'Kandhan Solar',
-    type: 'Solar Energy Solutions',
-    link: 'https://kandhansolar.com/',
-    problem: 'Needed to reach homeowners and industries to promote sustainable energy adoption and cost savings.',
-    solution: 'Engineered a "Value-Based Marketing" strategy highlighting ROI on electricity bills and eco-friendly benefits.',
-    results: 'Attracted a massive client base of homes and industries by building trust through documented project experience.',
-    tech: ['Growth Strategy', 'Lead Generation', 'SEO'],
-    color: 'from-yellow-500/10 to-primary/5'
-  },
-  {
-    category: 'marketing',
-    client: 'Subramanya Swami Realty',
-    type: 'Real Estate Development',
-    link: 'https://subramanyaswamirealty.com/',
-    problem: 'Property buyers and investors needed a secure and transparent platform to find profitable investment opportunities.',
-    solution: 'Architected a growth strategy focused on location advantages and long-term property value growth projections.',
-    results: 'Positioned the brand as a trusted local expert, driving high-intent leads for residential and commercial sales.',
-    tech: ['Investment Strategy', 'SEO', 'Lead Management'],
-    color: 'from-amber-600/10 to-accent/5'
-  },
-  {
-    category: 'marketing',
-    client: 'Priya Jewellery',
-    type: 'Luxury Retail Growth',
-    link: '#',
-    problem: 'A heritage jewellery brand needed to modernize its identity and attract a younger digital audience.',
-    solution: 'Designed and executed a cinematic brand narrative and targeted performance ads for premium inventory.',
-    results: 'Significantly boosted store footfall and social engagement through data-led digital ad targeting.',
-    tech: ['Brand Narrative', 'Performance Ads', 'Creative'],
-    color: 'from-rose-500/10 to-accent/5'
-  },
-  {
-    category: 'web',
-    client: 'Chaloyaar',
-    type: 'Travel Booking Aggregator',
-    link: '#',
-    problem: 'The market needed a unified private travel platform for bus, hotel, and flight bookings across India (RedBus model).',
-    solution: 'Developed an end-to-end travel aggregator with discount engines and multi-provider API integrations.',
-    results: 'Successfully scaled as a versatile travel hub offering deals on hotels, flights, and cab bookings across India.',
-    tech: ['Next.js', 'RedBus API', 'Flight Data Sync'],
-    color: 'from-green-500/10 to-primary/5'
-  },
-  {
-    category: 'web',
-    client: 'AmazoPrint',
-    type: 'Custom Printing E-commerce',
-    link: '#',
-    problem: 'Businesses lacked a seamless online solution for individual and bulk custom printing orders.',
-    solution: 'Architected an online store for custom T-shirts, mugs, and ID cards with user-driven design uploads.',
-    results: 'Automated order workflows from design upload to production for corporate branding and personal gifts.',
-    tech: ['E-commerce', 'Image Processing', 'Workflow Automation'],
-    color: 'from-purple-500/10 to-accent/5'
-  },
-  {
-    category: 'events',
-    client: 'TNSTC ETM Systems',
-    type: 'Enterprise IT Servicing',
-    link: '#',
-    problem: 'Manual bus ticketing led to revenue leakage and errors. Required a digital auditing and ticketing solution.',
-    solution: 'Implemented Electronic Ticketing Machines (ETM) with automated fare calculation and instant printing.',
-    results: 'Eliminated manual errors and revenue leakage; provided real-time daily passenger and revenue tracking across TN.',
-    tech: ['ETM Integration', 'Revenue Analytics', 'Data Security'],
-    color: 'from-primary/10 to-secondary/30'
-  }
 ];
 
 export default function PortfolioPage() {
@@ -158,28 +69,27 @@ export default function PortfolioPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                   {categoryProjects.map((project, i) => (
                     <Card key={i} className="animated-card bg-card overflow-hidden flex flex-col group border-primary/5 shadow-2xl">
-                      <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${project.color} flex flex-col items-center justify-center p-12 transition-all duration-700 group-hover:scale-[1.02]`}>
-                        <div className="absolute inset-0 opacity-10" 
-                             style={{backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '16px 16px'}} />
-                        
-                        <div className="relative z-10 text-center space-y-4">
-                           <p className="text-xs font-bold uppercase tracking-widest text-primary/60">{project.type}</p>
-                           <h3 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter">{project.client}</h3>
-                           <div className="flex flex-wrap justify-center gap-2 pt-4">
-                             {project.tech.map((t, idx) => (
-                               <Badge key={idx} variant="outline" className="bg-background/50 backdrop-blur-sm border-primary/20">{t}</Badge>
-                             ))}
-                           </div>
-                        </div>
-
-                        {project.link !== '#' && (
+                      <Link href={`/portfolio/${project.id}`} className="block">
+                        <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${project.color} flex flex-col items-center justify-center p-12 transition-all duration-700 group-hover:scale-[1.02]`}>
+                          <div className="absolute inset-0 opacity-10" 
+                               style={{backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '16px 16px'}} />
+                          
+                          <div className="relative z-10 text-center space-y-4">
+                             <p className="text-xs font-bold uppercase tracking-widest text-primary/60">{project.type}</p>
+                             <h3 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter">{project.client}</h3>
+                             <div className="flex flex-wrap justify-center gap-2 pt-4">
+                               {project.tech.map((t, idx) => (
+                                 <Badge key={idx} variant="outline" className="bg-background/50 backdrop-blur-sm border-primary/20">{t}</Badge>
+                               ))}
+                             </div>
+                          </div>
                           <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <Button asChild size="icon" variant="secondary" className="rounded-full shadow-2xl">
-                              <Link href={project.link} target="_blank"><ArrowUpRight size={20} /></Link>
+                            <Button size="icon" variant="secondary" className="rounded-full shadow-2xl">
+                              <ArrowUpRight size={20} />
                             </Button>
                           </div>
-                        )}
-                      </div>
+                        </div>
+                      </Link>
 
                       <CardContent className="p-10 space-y-8 flex-grow">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -187,25 +97,23 @@ export default function PortfolioPage() {
                             <h4 className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
                               <Zap size={12} className="text-accent" /> The Challenge
                             </h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{project.problem}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{project.problem}</p>
                           </div>
                           <div className="space-y-3">
                             <h4 className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
                               <CheckCircle2 size={12} className="text-primary" /> The Growth
                             </h4>
-                            <p className="text-foreground font-bold leading-relaxed">{project.results}</p>
+                            <p className="text-foreground font-bold leading-relaxed line-clamp-3">{project.results}</p>
                           </div>
                         </div>
                         
                         <div className="pt-6 border-t border-border/50 flex justify-between items-center">
                           <p className="text-xs text-muted-foreground font-medium italic">Strategic solution by Knewrix.</p>
-                          {project.link !== '#' && (
-                            <Button asChild variant="link" className="text-primary font-bold gap-2 p-0">
-                              <Link href={project.link} target="_blank">
-                                Visit Live Project <ArrowUpRight size={14} />
-                              </Link>
-                            </Button>
-                          )}
+                          <Button asChild variant="link" className="text-primary font-bold gap-2 p-0">
+                            <Link href={`/portfolio/${project.id}`}>
+                              View Full Story <ArrowUpRight size={14} />
+                            </Link>
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>
