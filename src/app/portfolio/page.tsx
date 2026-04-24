@@ -2,7 +2,7 @@ import {Metadata} from 'next';
 import {Card, CardContent} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Globe, Smartphone, BarChart3, Camera, PartyPopper, ArrowUpRight, CheckCircle2, Zap, Cpu} from 'lucide-react';
+import {Globe, Smartphone, BarChart3, Camera, PartyPopper, ArrowUpRight, CheckCircle2, Zap, Sun, Building2, Gem} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 const CATEGORIES = [
   { id: 'mobile', name: 'Mobile Applications', icon: Smartphone },
+  { id: 'marketing', name: 'Digital Marketing & Growth', icon: BarChart3 },
   { id: 'web', name: 'Web Development', icon: Globe },
-  { id: 'marketing', name: 'Digital Marketing', icon: BarChart3 },
   { id: 'events', name: 'IT Servicing & Events', icon: PartyPopper },
 ];
 
@@ -23,9 +23,9 @@ const PROJECTS = [
     client: 'TNSTC App',
     type: 'Govt. Transit Super-App',
     link: '#',
-    problem: 'Needed a robust system for intra-state and long-distance government bus booking in Tamil Nadu.',
-    solution: 'Engineered a high-concurrency mobile application for TNSTC & SETC bus ticket reservations.',
-    results: 'Enabled real-time seat availability, route tracking, and automated booking/cancellations.',
+    problem: 'Official app for Tamil Nadu government buses. Needed a robust system for intra-state and long-distance bus booking.',
+    solution: 'Engineered a high-concurrency mobile application for ticket reservations, routes, timings, and seat availability tracking.',
+    results: 'Enabled real-time seat availability and automated booking/cancellations for millions of TNSTC & SETC commuters.',
     tech: ['React Native', 'Real-time APIs', 'Payment Integration'],
     color: 'from-blue-600/10 to-primary/5'
   },
@@ -34,20 +34,53 @@ const PROJECTS = [
     client: 'GSRTC App',
     type: 'State Transport App',
     link: '#',
-    problem: 'Required a reliable mobile interface for Gujarat state transport services.',
-    solution: 'Built a specialized booking engine with live bus status tracking and seat reservation logic.',
-    results: 'Streamlined state-wide bus travel for millions of daily commuters in Gujarat.',
+    problem: 'Government bus booking app for Gujarat. Required a reliable interface for schedules and live bus status.',
+    solution: 'Built a specialized booking engine with live tracking and seat reservation logic focused on Gujarat state transport.',
+    results: 'Streamlined state-wide bus travel for millions of daily commuters with easy booking management.',
     tech: ['Flutter', 'Live Tracking', 'GSRTC API'],
     color: 'from-orange-500/10 to-accent/5'
+  },
+  {
+    category: 'marketing',
+    client: 'Kandhan Solar',
+    type: 'Solar Energy Solutions',
+    link: 'https://kandhansolar.com/',
+    problem: 'Needed to reach homeowners and industries to promote sustainable energy adoption and cost savings.',
+    solution: 'Engineered a "Value-Based Marketing" strategy highlighting ROI on electricity bills and eco-friendly benefits.',
+    results: 'Attracted a massive client base of homes and industries by building trust through documented project experience.',
+    tech: ['Growth Strategy', 'Lead Generation', 'SEO'],
+    color: 'from-yellow-500/10 to-primary/5'
+  },
+  {
+    category: 'marketing',
+    client: 'Subramanya Swami Realty',
+    type: 'Real Estate Development',
+    link: 'https://subramanyaswamirealty.com/',
+    problem: 'Property buyers and investors needed a secure and transparent platform to find profitable investment opportunities.',
+    solution: 'Architected a growth strategy focused on location advantages and long-term property value growth projections.',
+    results: 'Positioned the brand as a trusted local expert, driving high-intent leads for residential and commercial sales.',
+    tech: ['Investment Strategy', 'SEO', 'Lead Management'],
+    color: 'from-amber-600/10 to-accent/5'
+  },
+  {
+    category: 'marketing',
+    client: 'Priya Jewellery',
+    type: 'Luxury Retail Growth',
+    link: '#',
+    problem: 'A heritage jewellery brand needed to modernize its identity and attract a younger digital audience.',
+    solution: 'Designed and executed a cinematic brand narrative and targeted performance ads for premium inventory.',
+    results: 'Significantly boosted store footfall and social engagement through data-led digital ad targeting.',
+    tech: ['Brand Narrative', 'Performance Ads', 'Creative'],
+    color: 'from-rose-500/10 to-accent/5'
   },
   {
     category: 'web',
     client: 'Chaloyaar',
     type: 'Travel Booking Aggregator',
     link: '#',
-    problem: 'The market needed a unified private travel platform for bus, hotel, and flight bookings across India.',
-    solution: 'Developed an end-to-end travel aggregator with discount engines and multiple booking modules.',
-    results: 'Successfully scaled as a versatile private travel booking hub with massive daily traffic.',
+    problem: 'The market needed a unified private travel platform for bus, hotel, and flight bookings across India (RedBus model).',
+    solution: 'Developed an end-to-end travel aggregator with discount engines and multi-provider API integrations.',
+    results: 'Successfully scaled as a versatile travel hub offering deals on hotels, flights, and cab bookings across India.',
     tech: ['Next.js', 'RedBus API', 'Flight Data Sync'],
     color: 'from-green-500/10 to-primary/5'
   },
@@ -57,8 +90,8 @@ const PROJECTS = [
     type: 'Custom Printing E-commerce',
     link: '#',
     problem: 'Businesses lacked a seamless online solution for individual and bulk custom printing orders.',
-    solution: 'Architected an online printing store allowing users to upload designs for T-shirts, mugs, and banners.',
-    results: 'Automated order workflows from design upload to production for corporate and personal gifting.',
+    solution: 'Architected an online store for custom T-shirts, mugs, and ID cards with user-driven design uploads.',
+    results: 'Automated order workflows from design upload to production for corporate branding and personal gifts.',
     tech: ['E-commerce', 'Image Processing', 'Workflow Automation'],
     color: 'from-purple-500/10 to-accent/5'
   },
@@ -67,9 +100,9 @@ const PROJECTS = [
     client: 'TNSTC ETM Systems',
     type: 'Enterprise IT Servicing',
     link: '#',
-    problem: 'Manual bus ticketing in Tamil Nadu led to revenue leakage and passenger data errors.',
+    problem: 'Manual bus ticketing led to revenue leakage and errors. Required a digital auditing and ticketing solution.',
     solution: 'Implemented Electronic Ticketing Machines (ETM) with automated fare calculation and instant printing.',
-    results: 'Eliminated manual errors; providing real-time daily revenue and passenger data tracking across TN.',
+    results: 'Eliminated manual errors and revenue leakage; provided real-time daily passenger and revenue tracking across TN.',
     tech: ['ETM Integration', 'Revenue Analytics', 'Data Security'],
     color: 'from-primary/10 to-secondary/30'
   }
@@ -87,7 +120,7 @@ export default function PortfolioPage() {
             Works <span className="not-italic gradient-text">& Growth.</span>
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
-            From state-wide government transit apps to complex enterprise IT systems, we architect competitive advantages.
+            From state-wide government transit apps to precision marketing for high-value real estate and energy.
           </p>
         </header>
 
@@ -158,14 +191,14 @@ export default function PortfolioPage() {
                           </div>
                           <div className="space-y-3">
                             <h4 className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
-                              <CheckCircle2 size={12} className="text-primary" /> The Result
+                              <CheckCircle2 size={12} className="text-primary" /> The Growth
                             </h4>
                             <p className="text-foreground font-bold leading-relaxed">{project.results}</p>
                           </div>
                         </div>
                         
                         <div className="pt-6 border-t border-border/50 flex justify-between items-center">
-                          <p className="text-xs text-muted-foreground font-medium italic">High-performance solution by Knewrix.</p>
+                          <p className="text-xs text-muted-foreground font-medium italic">Strategic solution by Knewrix.</p>
                           {project.link !== '#' && (
                             <Button asChild variant="link" className="text-primary font-bold gap-2 p-0">
                               <Link href={project.link} target="_blank">
