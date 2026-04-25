@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {usePathname} from 'next/navigation';
 import {cn} from '@/lib/utils';
 import {Button} from '@/components/ui/button';
@@ -41,6 +42,14 @@ export function Navigation() {
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="group flex items-center gap-3">
+              <Image 
+                src="/knwerix_header.png" 
+                alt="Knewrix Logo" 
+                width={40} 
+                height={40} 
+                className="object-contain"
+                priority
+              />
               <div className="flex flex-col items-start">
                 <span className="font-headline text-xl md:text-2xl font-bold tracking-tighter leading-none">
                   KNEW<span className="text-primary">RIX</span>

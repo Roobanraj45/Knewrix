@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
@@ -11,6 +12,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="group flex items-center gap-3">
+              <Image 
+                src="/knwerix_header.png" 
+                alt="Knewrix Logo" 
+                width={32} 
+                height={32} 
+                className="object-contain"
+              />
               <div className="flex flex-col items-start">
                 <span className="font-headline text-2xl font-bold tracking-tighter leading-none">
                   KNEW<span className="text-primary">RIX</span>

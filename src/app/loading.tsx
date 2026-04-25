@@ -1,11 +1,18 @@
 import { Loader2 } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Loading() {
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background/80 backdrop-blur-sm">
       <div className="relative flex flex-col items-center gap-6">
         <div className="relative">
-          <Loader2 className="h-12 w-12 text-primary animate-spin" />
+          <Image 
+            src="/knwerix_header.png" 
+            alt="Knewrix Loading" 
+            width={80} 
+            height={80} 
+            className="animate-pulse"
+          />
           <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full animate-pulse" />
         </div>
         <div className="flex flex-col items-center gap-2 text-center">
