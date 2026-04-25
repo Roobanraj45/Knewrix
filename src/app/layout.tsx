@@ -67,10 +67,10 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: '/knwerix_header.png', type: 'image/png' },
+      { url: '/knewrix.png', type: 'image/png' },
     ],
-    shortcut: '/knwerix_header.png',
-    apple: '/knwerix_header.png',
+    shortcut: '/knewrix.png',
+    apple: '/knewrix.png',
   },
   openGraph: {
     title: 'Knewrix | Software House & Digital Growth Partner',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     siteName: 'Knewrix',
     images: [
       {
-        url: '/knwerix_header.png',
+        url: '/knewrix.png',
         width: 1200,
         height: 630,
         alt: 'Knewrix Digital Growth Partner',
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Knewrix | Software House & Digital Growth Partner',
     description: 'High-performance Websites, Mobile Apps, and Digital Marketing for ambitious global brands.',
-    images: ['/knwerix_header.png'],
+    images: ['/knewrix.png'],
     creator: '@knewrix',
   },
   robots: {

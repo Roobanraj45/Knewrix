@@ -44,7 +44,7 @@ export function Navigation() {
             <Link href="/" className="group flex items-center gap-3">
               <div className="relative w-10 h-10 md:w-12 md:h-12">
                 <Image 
-                  src="/knwerix_header.png" 
+                  src="/knewrix.png" 
                   alt="Knewrix Logo" 
                   fill 
                   className="object-contain"

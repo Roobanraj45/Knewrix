@@ -14,7 +14,7 @@ export function Footer() {
             <Link href="/" className="group flex items-center gap-3">
               <div className="relative w-12 h-12">
                 <Image 
-                  src="/knwerix_header.png" 
+                  src="/knewrix.png" 
                   alt="Knewrix Logo" 
                   fill 
                   className="object-contain"
