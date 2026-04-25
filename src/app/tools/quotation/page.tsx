@@ -114,7 +114,7 @@ export default function QuotationPage() {
     <div className="pt-32 pb-24 min-h-screen bg-secondary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 print:hidden">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6 print:hidden">
           <div>
             <h1 className="font-headline text-4xl font-bold tracking-tight">Quotation <span className="text-primary">Engine.</span></h1>
             <p className="text-muted-foreground mt-2 text-sm">Enterprise estimate generator with Firebase synchronization.</p>
@@ -147,17 +147,17 @@ export default function QuotationPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* FORM SECTION */}
           <div className={cn("lg:col-span-5 space-y-8 print:hidden", isPreview ? "hidden lg:block opacity-50 pointer-events-none" : "")}>
             <Card className="rounded-[2rem] border-border/50 shadow-xl overflow-hidden">
-              <CardHeader className="bg-primary/5 border-b border-border/50 p-8">
+              <CardHeader className="bg-primary/5 border-b border-border/50 p-6">
                 <div className="flex items-center gap-2 font-bold">
                   <FileText className="text-primary" size={20} />
                   New Quotation Entry
                 </div>
               </CardHeader>
-              <CardContent className="p-8">
+              <CardContent className="p-6">
                 <form className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -188,7 +188,7 @@ export default function QuotationPage() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Address Details</label>
-                      <Textarea {...register('clientAddress')} placeholder="City, State, ZIP..." className="min-h-[80px]" />
+                      <Textarea {...register('clientAddress')} placeholder="City, State, ZIP..." className="min-h-[60px]" />
                     </div>
                   </div>
 
@@ -204,7 +204,7 @@ export default function QuotationPage() {
                     
                     <div className="space-y-3">
                       {fields.map((field, index) => (
-                        <div key={field.id} className="p-4 rounded-xl bg-secondary/30 border border-border/50 relative group">
+                        <div key={field.id} className="p-3 rounded-xl bg-secondary/30 border border-border/50 relative group">
                           <button 
                             type="button" 
                             onClick={() => remove(index)}
@@ -212,24 +212,24 @@ export default function QuotationPage() {
                           >
                             <Trash2 size={10} />
                           </button>
-                          <div className="space-y-3">
+                          <div className="space-y-2">
                             <Input 
                               {...register(`items.${index}.description`)} 
                               placeholder="Describe service..." 
-                              className="bg-background text-sm"
+                              className="bg-background text-sm h-8"
                             />
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-2 gap-2">
                               <Input 
                                 type="number" 
                                 {...register(`items.${index}.quantity`, { valueAsNumber: true })} 
                                 placeholder="Qty" 
-                                className="bg-background text-sm"
+                                className="bg-background text-sm h-8"
                               />
                               <Input 
                                 type="number" 
                                 {...register(`items.${index}.unitPrice`, { valueAsNumber: true })} 
                                 placeholder="Price (₹)" 
-                                className="bg-background text-sm"
+                                className="bg-background text-sm h-8"
                               />
                             </div>
                           </div>
@@ -240,7 +240,7 @@ export default function QuotationPage() {
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Disclosures & Terms</label>
-                    <Textarea {...register('notes')} className="bg-background min-h-[100px] text-xs" />
+                    <Textarea {...register('notes')} className="bg-background min-h-[80px] text-xs" />
                   </div>
                 </form>
               </CardContent>
@@ -249,18 +249,18 @@ export default function QuotationPage() {
 
           {/* DOCUMENT PREVIEW SECTION */}
           <div className="lg:col-span-7">
-            <div id="quotation-document" className="bg-white text-black p-12 md:p-20 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-0 print:m-0 print:min-h-0">
+            <div id="quotation-document" className="bg-white text-black p-10 md:p-16 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-8 print:m-0 print:min-h-0">
               
-              {/* Centered Watermark Logo - Now Colorful */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
-                <Image src="/knwerix_header.png" alt="Watermark" width={600} height={600} />
+              {/* Centered Watermark Logo - Colorful */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05]">
+                <Image src="/knwerix_header.png" alt="Watermark" width={550} height={550} />
               </div>
 
-              {/* Header */}
-              <div className="flex justify-between items-start mb-16 relative z-10">
+              {/* Header - Compact */}
+              <div className="flex justify-between items-start mb-10 relative z-10">
                 <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <Image src="/knwerix_header.png" alt="Logo" width={44} height={44} />
+                  <div className="flex items-center gap-3 mb-4">
+                    <Image src="/knwerix_header.png" alt="Logo" width={40} height={40} />
                     <div className="flex flex-col">
                       <span className="font-headline text-2xl font-bold tracking-tighter leading-none">
                         KNEW<span className="text-primary">RIX</span>
@@ -270,99 +270,101 @@ export default function QuotationPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="text-[10px] text-gray-600 space-y-0.5 uppercase tracking-wide">
-                    <p className="font-bold text-black text-xs">Knewrix Private Limited</p>
+                  <div className="text-[9px] text-gray-600 space-y-0.5 uppercase tracking-wide">
+                    <p className="font-bold text-black text-[10px]">Knewrix Private Limited</p>
                     <p className="max-w-[280px]">ST.JOSEPH'S School Street, Near Poonamallee Bus Stand</p>
                     <p>Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
-                    <p className="flex items-center gap-1.5 pt-2"><Mail size={10} /> hello@knewrix.com</p>
-                    <p className="flex items-center gap-1.5"><Phone size={10} /> +91 96007 12539</p>
+                    <div className="flex items-center gap-3 pt-1">
+                      <p className="flex items-center gap-1"><Mail size={8} /> hello@knewrix.com</p>
+                      <p className="flex items-center gap-1"><Phone size={8} /> +91 96007 12539</p>
+                    </div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <h2 className="text-4xl font-bold tracking-tighter uppercase mb-6 text-gray-200">Quotation</h2>
-                  <div className="space-y-1.5 text-[10px] uppercase font-bold tracking-widest">
-                    <p><span className="text-gray-400 mr-2">Serial ID</span> <span className="bg-gray-100 px-2 py-0.5 rounded">{watchedValues.quotationNumber}</span></p>
-                    <p><span className="text-gray-400 mr-2">Issue Date</span> <span>{watchedValues.date}</span></p>
+                  <h2 className="text-3xl font-bold tracking-tighter uppercase mb-4 text-gray-200">Quotation</h2>
+                  <div className="space-y-1 text-[9px] uppercase font-bold tracking-widest">
+                    <p><span className="text-gray-400 mr-2">Serial ID:</span> <span className="bg-gray-100 px-2 py-0.5 rounded text-black">{watchedValues.quotationNumber}</span></p>
+                    <p><span className="text-gray-400 mr-2">Date:</span> <span className="text-black">{watchedValues.date}</span></p>
                   </div>
                 </div>
               </div>
 
-              {/* Bill To */}
-              <div className="mb-16 relative z-10">
-                <h4 className="text-[9px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Issued To</h4>
-                <div className="space-y-1">
-                  <p className="text-lg font-bold uppercase">{watchedValues.clientName || 'Valued Recipient'}</p>
-                  <p className="text-[11px] font-medium text-gray-600 tracking-wide">{watchedValues.clientEmail}</p>
+              {/* Bill To - Compact */}
+              <div className="mb-10 relative z-10">
+                <h4 className="text-[8px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-2 border-b pb-1">Issued To</h4>
+                <div className="space-y-0.5">
+                  <p className="text-base font-bold uppercase">{watchedValues.clientName || 'Valued Recipient'}</p>
+                  <p className="text-[10px] font-medium text-gray-600 tracking-wide">{watchedValues.clientEmail}</p>
                   {watchedValues.clientAddress && (
-                    <p className="text-[9px] text-gray-500 max-w-[320px] mt-2 whitespace-pre-wrap leading-relaxed italic">{watchedValues.clientAddress}</p>
+                    <p className="text-[9px] text-gray-500 max-w-[400px] mt-1 whitespace-pre-wrap leading-tight italic">{watchedValues.clientAddress}</p>
                   )}
                 </div>
               </div>
 
-              {/* Items Table */}
+              {/* Items Table - Dense */}
               <div className="flex-grow relative z-10">
                 <Table className="border-y border-gray-100">
                   <TableHeader>
                     <TableRow className="bg-gray-50/50 border-none">
-                      <TableHead className="text-black font-bold uppercase text-[9px] tracking-[0.1em] py-4">Description of Service</TableHead>
-                      <TableHead className="text-black font-bold uppercase text-[9px] tracking-[0.1em] py-4 text-center w-[60px]">Qty</TableHead>
-                      <TableHead className="text-black font-bold uppercase text-[9px] tracking-[0.1em] py-4 text-right w-[120px]">Price (₹)</TableHead>
-                      <TableHead className="text-black font-bold uppercase text-[9px] tracking-[0.1em] py-4 text-right w-[120px]">Subtotal (₹)</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3">Description of Service</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3 text-center w-[60px]">Qty</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3 text-right w-[100px]">Price (₹)</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3 text-right w-[100px]">Subtotal (₹)</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {watchedValues.items.map((item, i) => (
                       <TableRow key={i} className="border-gray-50">
-                        <TableCell className="py-6 align-top">
-                          <p className="font-bold text-sm tracking-tight">{item.description || 'Professional Service Item'}</p>
+                        <TableCell className="py-4 align-top">
+                          <p className="font-bold text-xs tracking-tight">{item.description || 'Professional Service Item'}</p>
                         </TableCell>
-                        <TableCell className="py-6 text-center align-top text-xs font-medium">{item.quantity}</TableCell>
-                        <TableCell className="py-6 text-right align-top text-xs font-medium">{item.unitPrice.toLocaleString('en-IN')}</TableCell>
-                        <TableCell className="py-6 text-right align-top font-bold text-sm">{(item.quantity * item.unitPrice).toLocaleString('en-IN')}</TableCell>
+                        <TableCell className="py-4 text-center align-top text-[10px] font-medium">{item.quantity}</TableCell>
+                        <TableCell className="py-4 text-right align-top text-[10px] font-medium">{item.unitPrice.toLocaleString('en-IN')}</TableCell>
+                        <TableCell className="py-4 text-right align-top font-bold text-xs">{(item.quantity * item.unitPrice).toLocaleString('en-IN')}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
               </div>
 
-              {/* Totals */}
-              <div className="flex justify-end mt-12 mb-16 relative z-10">
-                <div className="w-[320px] space-y-4">
-                  <div className="flex justify-between text-[10px] uppercase font-bold tracking-widest text-gray-500">
+              {/* Totals - Space Optimized */}
+              <div className="flex justify-end mt-8 mb-10 relative z-10">
+                <div className="w-[280px] space-y-3">
+                  <div className="flex justify-between text-[9px] uppercase font-bold tracking-widest text-gray-500">
                     <span>Taxable Value</span>
                     <span className="text-black">₹{subtotal.toLocaleString('en-IN')}</span>
                   </div>
                   {watchedValues.gstEnabled && (
-                    <div className="flex justify-between text-[10px] uppercase font-bold tracking-widest text-gray-500">
-                      <span>GST Component (18%)</span>
+                    <div className="flex justify-between text-[9px] uppercase font-bold tracking-widest text-gray-500">
+                      <span>GST (18%)</span>
                       <span className="text-black">₹{gst.toLocaleString('en-IN')}</span>
                     </div>
                   )}
-                  <div className="flex justify-between text-xl font-bold bg-black text-white p-5 rounded-2xl shadow-xl">
-                    <span className="uppercase tracking-tighter italic">Net Payable</span>
+                  <div className="flex justify-between text-lg font-bold bg-black text-white p-4 rounded-xl shadow-lg">
+                    <span className="uppercase tracking-tighter italic text-sm">Net Total</span>
                     <span>₹{total.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Notes & Footer */}
-              <div className="space-y-10 relative z-10">
+              {/* Notes & Footer - Optimized */}
+              <div className="space-y-8 relative z-10">
                 <div className="max-w-[500px]">
-                  <h4 className="text-[9px] uppercase font-bold tracking-[0.15em] text-gray-400 mb-2 border-b pb-1">Notes & Contract Terms</h4>
-                  <p className="text-[10px] text-gray-500 leading-relaxed italic whitespace-pre-wrap">{watchedValues.notes}</p>
+                  <h4 className="text-[8px] uppercase font-bold tracking-[0.15em] text-gray-400 mb-1.5 border-b pb-0.5">Terms & Conditions</h4>
+                  <p className="text-[9px] text-gray-500 leading-tight italic whitespace-pre-wrap">{watchedValues.notes}</p>
                 </div>
                 
-                <div className="pt-12 flex flex-col items-center border-t border-gray-100">
-                   <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-2">Notice</p>
-                   <p className="text-[9px] text-gray-500 italic text-center leading-relaxed max-w-[400px]">
-                     This is a computer-generated quotation and does not require a physical signature. All transactions are subject to the legal framework of Knewrix Private Limited.
+                <div className="pt-8 flex flex-col items-center border-t border-gray-100">
+                   <p className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">Authorization</p>
+                   <p className="text-[8px] text-gray-500 italic text-center leading-relaxed max-w-[420px]">
+                     This is a computer-generated document and does not require a physical signature. All engagements are subject to the master terms of Knewrix Private Limited.
                    </p>
                 </div>
               </div>
               
               {/* Statutory Footer */}
-              <div className="mt-auto pt-10 text-center">
-                <p className="text-[7px] uppercase font-bold tracking-[0.5em] text-gray-300">Certified Digital Estimate • Generated by Knewrix ERP</p>
+              <div className="mt-auto pt-8 text-center">
+                <p className="text-[6px] uppercase font-bold tracking-[0.5em] text-gray-300">Enterprise Digital Estimate • Secured by Knewrix ERP</p>
               </div>
             </div>
           </div>
@@ -382,10 +384,11 @@ export default function QuotationPage() {
             left: 0;
             top: 0;
             width: 100%;
-            padding: 40px !important;
+            padding: 30px !important;
             margin: 0;
             border: none;
             box-shadow: none;
+            min-height: auto;
           }
           .print\\:hidden {
             display: none !important;
