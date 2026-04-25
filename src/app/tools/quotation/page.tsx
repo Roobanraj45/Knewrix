@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -252,8 +251,8 @@ export default function QuotationPage() {
           <div className="lg:col-span-7">
             <div id="quotation-document" className="bg-white text-black p-12 md:p-20 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-0 print:m-0 print:min-h-0">
               
-              {/* Centered Watermark Logo */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] grayscale">
+              {/* Centered Watermark Logo - Now Colorful */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
                 <Image src="/knwerix_header.png" alt="Watermark" width={600} height={600} />
               </div>
 
