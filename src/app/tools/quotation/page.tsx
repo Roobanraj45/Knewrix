@@ -353,21 +353,11 @@ export default function QuotationPage() {
                   <p className="text-[10px] text-gray-500 leading-relaxed italic whitespace-pre-wrap">{watchedValues.notes}</p>
                 </div>
                 
-                <div className="pt-12 flex justify-between items-end border-t border-gray-100">
-                  <div className="space-y-4">
-                    <h4 className="text-[8px] uppercase font-bold tracking-widest text-gray-400">Payment Channel</h4>
-                    <div className="text-[9px] text-gray-600 space-y-0.5 font-medium">
-                      <p><span className="text-gray-400 mr-2">NAME:</span> Knewrix Private Limited</p>
-                      <p><span className="text-gray-400 mr-2">BANK:</span> [Enterprise Partner Bank]</p>
-                      <p><span className="text-gray-400 mr-2">IFSC:</span> [BANKSWIFTCODE]</p>
-                      <p><span className="text-gray-400 mr-2">ACCT:</span> [0000 0000 0000]</p>
-                    </div>
-                  </div>
-                  <div className="text-right flex flex-col items-end">
-                    <div className="w-[180px] h-[50px] border-b border-gray-200 mb-3 opacity-50 italic text-[10px] text-gray-300 flex items-end justify-center">E-SIGNATURE VOID WITHOUT SEAL</div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-black">Authorized Signatory</p>
-                    <p className="text-[7px] text-gray-400 mt-1 uppercase tracking-widest">Knewrix Private Limited Internal Audit</p>
-                  </div>
+                <div className="pt-12 flex flex-col items-center border-t border-gray-100">
+                   <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-2">Notice</p>
+                   <p className="text-[9px] text-gray-500 italic text-center leading-relaxed max-w-[400px]">
+                     This is a computer-generated quotation and does not require a physical signature. All transactions are subject to the legal framework of Knewrix Private Limited.
+                   </p>
                 </div>
               </div>
               
