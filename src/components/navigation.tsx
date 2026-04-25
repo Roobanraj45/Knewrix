@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {usePathname} from 'next/navigation';
 import {cn} from '@/lib/utils';
 import {Button} from '@/components/ui/button';
@@ -38,15 +39,26 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="group flex flex-col items-start">
-              <span className="font-headline text-xl md:text-2xl font-bold tracking-tighter leading-none">
-                KNEW<span className="text-primary">RIX</span>
-              </span>
-              <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary transition-colors mt-0.5">
-                Digital Growth Partner
-              </span>
+            <Link href="/" className="group flex items-center gap-3">
+              <div className="relative w-10 h-10 md:w-12 md:h-12">
+                <Image 
+                  src="/knwerix_header.png" 
+                  alt="Knewrix Logo" 
+                  fill 
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="font-headline text-xl md:text-2xl font-bold tracking-tighter leading-none">
+                  KNEW<span className="text-primary">RIX</span>
+                </span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary transition-colors mt-0.5">
+                  Digital Growth Partner
+                </span>
+              </div>
             </Link>
           </div>
           

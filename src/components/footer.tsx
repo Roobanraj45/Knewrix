@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
@@ -10,13 +11,23 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="group flex flex-col items-start">
-              <span className="font-headline text-2xl font-bold tracking-tighter leading-none">
-                KNEW<span className="text-primary">RIX</span>
-              </span>
-              <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary transition-colors mt-0.5">
-                Digital Growth Partner
-              </span>
+            <Link href="/" className="group flex items-center gap-3">
+              <div className="relative w-12 h-12">
+                <Image 
+                  src="/knwerix_header.png" 
+                  alt="Knewrix Logo" 
+                  fill 
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="font-headline text-2xl font-bold tracking-tighter leading-none">
+                  KNEW<span className="text-primary">RIX</span>
+                </span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary transition-colors mt-0.5">
+                  Digital Growth Partner
+                </span>
+              </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Engineering the future of growth. We combine elite software development with cinematic creative strategy and end-to-end event mastery.
