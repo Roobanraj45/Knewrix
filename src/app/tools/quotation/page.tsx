@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Plus, Trash2, Printer, Building, Mail, Phone, FileText, Loader2, Save } from 'lucide-react';
+import { Plus, Trash2, Printer, Building, Mail, Phone, FileText, Loader2, Save, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { Separator } from '@/components/ui/separator';
@@ -247,117 +247,110 @@ export default function QuotationPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <div id="quotation-document" className="bg-white text-black p-10 md:p-14 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-8 print:m-0 print:min-h-0">
+            <div id="quotation-document" className="bg-white text-black p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-8 print:m-0 print:min-h-0">
               
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05]">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.08]">
                 <Image src="/knwerix_header.png" alt="Watermark" width={550} height={550} />
               </div>
 
-              <div className="flex justify-between items-start mb-10 relative z-10">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <Image src="/knwerix_header.png" alt="Logo" width={40} height={40} />
-                    <div className="flex flex-col">
-                      <span className="font-headline text-2xl font-bold tracking-tighter leading-none">
-                        KNEW<span className="text-primary">RIX</span>
-                      </span>
-                      <span className="text-[7px] font-bold uppercase tracking-[0.3em] text-gray-500">
-                        Digital Growth Partner
-                      </span>
-                    </div>
-                  </div>
-                  <div className="text-[9px] text-gray-600 space-y-0.5 uppercase tracking-wide">
-                    <p className="font-bold text-black text-[10px] mb-1">Knewrix Private Limited</p>
-                    <div className="leading-relaxed">
-                      <p>ST.JOSEPH'S School Street, Near Poonamallee Bus Stand,</p>
-                      <p>Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
-                    </div>
-                    <div className="flex items-center gap-3 pt-2">
-                      <p className="flex items-center gap-1"><Mail size={8} /> hello@knewrix.com</p>
-                      <p className="flex items-center gap-1"><Phone size={8} /> +91 96007 12539</p>
-                    </div>
+              <div className="flex justify-between items-start mb-6 relative z-10">
+                <div className="flex items-center gap-3">
+                  <Image src="/knwerix_header.png" alt="Logo" width={36} height={36} />
+                  <div className="flex flex-col">
+                    <span className="font-headline text-xl font-bold tracking-tighter leading-none">
+                      KNEW<span className="text-primary">RIX</span>
+                    </span>
+                    <span className="text-[6px] font-bold uppercase tracking-[0.3em] text-gray-500">
+                      Digital Growth Partner
+                    </span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <h2 className="text-3xl font-bold tracking-tighter uppercase mb-4 text-gray-200">Quotation</h2>
-                  <div className="space-y-1 text-[9px] uppercase font-bold tracking-widest">
-                    <p><span className="text-gray-400 mr-2">Serial ID:</span> <span className="bg-gray-100 px-2 py-0.5 rounded text-black">{watchedValues.quotationNumber}</span></p>
-                    <p><span className="text-gray-400 mr-2">Date:</span> <span className="text-black">{watchedValues.date}</span></p>
+                  <h2 className="text-2xl font-bold tracking-tighter uppercase text-gray-200">Quotation</h2>
+                  <div className="text-[8px] uppercase font-bold tracking-widest mt-1">
+                    <p><span className="text-gray-400">ID:</span> {watchedValues.quotationNumber}</p>
+                    <p><span className="text-gray-400">Date:</span> {watchedValues.date}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mb-10 relative z-10">
-                <h4 className="text-[8px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-2 border-b pb-1">Issued To</h4>
-                <div className="space-y-0.5">
-                  <p className="text-base font-bold uppercase">{watchedValues.clientName || 'Valued Recipient'}</p>
-                  <p className="text-[10px] font-medium text-gray-600 tracking-wide">{watchedValues.clientEmail}</p>
+              <div className="flex justify-between gap-10 mb-8 relative z-10">
+                <div className="flex-1 text-[8px] text-gray-600 uppercase tracking-wide leading-relaxed">
+                  <p className="font-bold text-black text-[9px] mb-1">Knewrix Private Limited</p>
+                  <p>ST.JOSEPH'S School Street, Near Poonamallee Bus Stand,</p>
+                  <p>Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
+                  <p className="mt-1 font-bold text-black">hello@knewrix.com | +91 96007 12539</p>
+                </div>
+                <div className="flex-1 text-right">
+                  <h4 className="text-[7px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-1">Issued To</h4>
+                  <p className="text-sm font-bold uppercase">{watchedValues.clientName || 'Valued Recipient'}</p>
+                  <p className="text-[9px] font-medium text-gray-600 tracking-wide">{watchedValues.clientEmail}</p>
                   {watchedValues.clientAddress && (
-                    <p className="text-[9px] text-gray-500 max-w-[400px] mt-1 whitespace-pre-wrap leading-tight italic">{watchedValues.clientAddress}</p>
+                    <p className="text-[8px] text-gray-500 mt-0.5 whitespace-pre-wrap leading-tight italic">{watchedValues.clientAddress}</p>
                   )}
                 </div>
               </div>
 
               <div className="flex-grow relative z-10">
-                <Table className="border-y border-gray-100">
+                <Table className="border-t border-gray-100">
                   <TableHeader>
                     <TableRow className="bg-gray-50/50 border-none">
-                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3">Description of Service</TableHead>
-                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3 text-center w-[60px]">Qty</TableHead>
-                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3 text-right w-[100px]">Price (₹)</TableHead>
-                      <TableHead className="text-black font-bold uppercase text-[8px] tracking-[0.1em] py-3 text-right w-[100px]">Subtotal (₹)</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[7px] tracking-[0.1em] py-2">Service Description</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[7px] tracking-[0.1em] py-2 text-center w-[50px]">Qty</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[7px] tracking-[0.1em] py-2 text-right w-[80px]">Price (₹)</TableHead>
+                      <TableHead className="text-black font-bold uppercase text-[7px] tracking-[0.1em] py-2 text-right w-[80px]">Total (₹)</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {watchedValues.items.map((item, i) => (
                       <TableRow key={i} className="border-gray-50">
-                        <TableCell className="py-4 align-top">
-                          <p className="font-bold text-xs tracking-tight">{item.description || 'Professional Service Item'}</p>
+                        <TableCell className="py-3 align-top">
+                          <p className="font-bold text-[11px] tracking-tight">{item.description || 'Professional Service Item'}</p>
                         </TableCell>
-                        <TableCell className="py-4 text-center align-top text-[10px] font-medium">{item.quantity}</TableCell>
-                        <TableCell className="py-4 text-right align-top text-[10px] font-medium">{item.unitPrice.toLocaleString('en-IN')}</TableCell>
-                        <TableCell className="py-4 text-right align-top font-bold text-xs">{(item.quantity * item.unitPrice).toLocaleString('en-IN')}</TableCell>
+                        <TableCell className="py-3 text-center align-top text-[9px] font-medium">{item.quantity}</TableCell>
+                        <TableCell className="py-3 text-right align-top text-[9px] font-medium">{item.unitPrice.toLocaleString('en-IN')}</TableCell>
+                        <TableCell className="py-3 text-right align-top font-bold text-[10px]">{(item.quantity * item.unitPrice).toLocaleString('en-IN')}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
               </div>
 
-              <div className="flex justify-end mt-8 mb-10 relative z-10">
-                <div className="w-[280px] space-y-3">
-                  <div className="flex justify-between text-[9px] uppercase font-bold tracking-widest text-gray-500">
-                    <span>Taxable Value</span>
+              <div className="flex justify-end mt-6 mb-8 relative z-10">
+                <div className="w-[240px] space-y-2">
+                  <div className="flex justify-between text-[8px] uppercase font-bold tracking-widest text-gray-500">
+                    <span>Taxable Amount</span>
                     <span className="text-black">₹{subtotal.toLocaleString('en-IN')}</span>
                   </div>
                   {watchedValues.gstEnabled && (
-                    <div className="flex justify-between text-[9px] uppercase font-bold tracking-widest text-gray-500">
+                    <div className="flex justify-between text-[8px] uppercase font-bold tracking-widest text-gray-500">
                       <span>GST (18%)</span>
                       <span className="text-black">₹{gst.toLocaleString('en-IN')}</span>
                     </div>
                   )}
-                  <div className="flex justify-between text-lg font-bold bg-black text-white p-4 rounded-xl shadow-lg">
-                    <span className="uppercase tracking-tighter italic text-sm">Net Total</span>
+                  <div className="flex justify-between text-base font-bold bg-black text-white p-3 rounded-xl shadow-lg mt-2">
+                    <span className="uppercase tracking-tighter italic text-xs">Net Total</span>
                     <span>₹{total.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-8 relative z-10">
-                <div className="max-w-[500px]">
-                  <h4 className="text-[8px] uppercase font-bold tracking-[0.15em] text-gray-400 mb-1.5 border-b pb-0.5">Terms & Conditions</h4>
-                  <p className="text-[9px] text-gray-500 leading-tight italic whitespace-pre-wrap">{watchedValues.notes}</p>
+              <div className="space-y-6 relative z-10">
+                <div className="max-w-[450px]">
+                  <h4 className="text-[7px] uppercase font-bold tracking-[0.15em] text-gray-400 mb-1 border-b pb-0.5">Notes & Terms</h4>
+                  <p className="text-[8px] text-gray-500 leading-tight italic whitespace-pre-wrap">{watchedValues.notes}</p>
                 </div>
                 
-                <div className="pt-8 flex flex-col items-center border-t border-gray-100">
-                   <p className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">Authorization</p>
-                   <p className="text-[8px] text-gray-500 italic text-center leading-relaxed max-w-[420px]">
+                <div className="pt-6 border-t border-gray-100 text-center">
+                   <p className="text-[8px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">Authorization Note</p>
+                   <p className="text-[7px] text-gray-500 italic leading-relaxed max-w-[400px] mx-auto">
                      This is a computer-generated document and does not require a physical signature. All engagements are subject to the master terms of Knewrix Private Limited.
                    </p>
                 </div>
               </div>
               
-              <div className="mt-auto pt-8 text-center">
-                <p className="text-[6px] uppercase font-bold tracking-[0.5em] text-gray-300">Enterprise Digital Estimate • Secured by Knewrix ERP</p>
+              <div className="mt-auto pt-6 text-center">
+                <p className="text-[6px] uppercase font-bold tracking-[0.5em] text-gray-300">Enterprise Estimate • Secured by Knewrix ERP</p>
               </div>
             </div>
           </div>
@@ -377,7 +370,7 @@ export default function QuotationPage() {
             left: 0;
             top: 0;
             width: 100%;
-            padding: 30px !important;
+            padding: 20px !important;
             margin: 0;
             border: none;
             box-shadow: none;

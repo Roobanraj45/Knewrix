@@ -66,7 +66,9 @@ export const metadata: Metadata = {
     'Priya Jewellery Marketing',
   ],
   icons: {
-    icon: '/knwerix_header.png',
+    icon: [
+      { url: '/knwerix_header.png', href: '/knwerix_header.png' },
+    ],
     shortcut: '/knwerix_header.png',
     apple: '/knwerix_header.png',
   },
