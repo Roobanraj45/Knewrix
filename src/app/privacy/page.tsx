@@ -111,7 +111,7 @@ export default function PrivacyPage() {
                 <p><span className="font-bold text-foreground">Officer:</span> Grievance Redressal Officer</p>
                 <p><span className="font-bold text-foreground">Entity:</span> Knewrix Private Limited</p>
                 <p><span className="font-bold text-foreground">Email:</span> compliance@knewrix.com</p>
-                <p><span className="font-bold text-foreground">Address:</span> ST.JOSEPH'S School Street, Near Poonamallee Bus Stand (Bus Entry Point), Poonamallee, Chennai - 600056, Tamil Nadu</p>
+                <p><span className="font-bold text-foreground">Address:</span> ST.JOSEPH&apos;S School Street, Near Poonamallee Bus Stand, Poonamallee, Chennai - 600056, Tamil Nadu</p>
               </div>
               <p className="mt-4 text-xs text-muted-foreground italic">
                 We acknowledge all grievances within 48 hours and resolve them within 15 business days.

@@ -125,8 +125,7 @@ export function Footer() {
               <div className="flex gap-4">
                 <MapPin className="text-primary flex-shrink-0" size={18} />
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  ST.JOSEPH'S School Street,<br />
-                  Near Poonamallee Bus Stand (Bus Entry Point),<br />
+                  ST.JOSEPH&apos;S School Street, Near Poonamallee Bus Stand,<br />
                   Poonamallee, Chennai - 600056,<br />
                   Tamil Nadu, India
                 </p>

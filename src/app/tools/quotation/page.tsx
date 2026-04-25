@@ -148,7 +148,6 @@ export default function QuotationPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          {/* FORM SECTION */}
           <div className={cn("lg:col-span-5 space-y-8 print:hidden", isPreview ? "hidden lg:block opacity-50 pointer-events-none" : "")}>
             <Card className="rounded-[2rem] border-border/50 shadow-xl overflow-hidden">
               <CardHeader className="bg-primary/5 border-b border-border/50 p-6">
@@ -204,7 +203,7 @@ export default function QuotationPage() {
                     
                     <div className="space-y-3">
                       {fields.map((field, index) => (
-                        <div key={field.id} className="p-3 rounded-xl bg-secondary/30 border border-border/50 relative group">
+                        <div key={field.id} className="p-3 rounded-xl bg-background border border-border/50 relative group">
                           <button 
                             type="button" 
                             onClick={() => remove(index)}
@@ -247,16 +246,13 @@ export default function QuotationPage() {
             </Card>
           </div>
 
-          {/* DOCUMENT PREVIEW SECTION */}
           <div className="lg:col-span-7">
-            <div id="quotation-document" className="bg-white text-black p-10 md:p-16 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-8 print:m-0 print:min-h-0">
+            <div id="quotation-document" className="bg-white text-black p-10 md:p-14 rounded-[2.5rem] shadow-2xl border border-border/50 min-h-[1123px] flex flex-col relative overflow-hidden print:shadow-none print:border-none print:rounded-none print:p-8 print:m-0 print:min-h-0">
               
-              {/* Centered Watermark Logo - Colorful */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05]">
                 <Image src="/knwerix_header.png" alt="Watermark" width={550} height={550} />
               </div>
 
-              {/* Header - Compact */}
               <div className="flex justify-between items-start mb-10 relative z-10">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
@@ -271,10 +267,12 @@ export default function QuotationPage() {
                     </div>
                   </div>
                   <div className="text-[9px] text-gray-600 space-y-0.5 uppercase tracking-wide">
-                    <p className="font-bold text-black text-[10px]">Knewrix Private Limited</p>
-                    <p className="max-w-[280px]">ST.JOSEPH'S School Street, Near Poonamallee Bus Stand</p>
-                    <p>Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
-                    <div className="flex items-center gap-3 pt-1">
+                    <p className="font-bold text-black text-[10px] mb-1">Knewrix Private Limited</p>
+                    <div className="leading-relaxed">
+                      <p>ST.JOSEPH'S School Street, Near Poonamallee Bus Stand,</p>
+                      <p>Poonamallee, Chennai - 600056, Tamil Nadu, India</p>
+                    </div>
+                    <div className="flex items-center gap-3 pt-2">
                       <p className="flex items-center gap-1"><Mail size={8} /> hello@knewrix.com</p>
                       <p className="flex items-center gap-1"><Phone size={8} /> +91 96007 12539</p>
                     </div>
@@ -289,7 +287,6 @@ export default function QuotationPage() {
                 </div>
               </div>
 
-              {/* Bill To - Compact */}
               <div className="mb-10 relative z-10">
                 <h4 className="text-[8px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-2 border-b pb-1">Issued To</h4>
                 <div className="space-y-0.5">
@@ -301,7 +298,6 @@ export default function QuotationPage() {
                 </div>
               </div>
 
-              {/* Items Table - Dense */}
               <div className="flex-grow relative z-10">
                 <Table className="border-y border-gray-100">
                   <TableHeader>
@@ -327,7 +323,6 @@ export default function QuotationPage() {
                 </Table>
               </div>
 
-              {/* Totals - Space Optimized */}
               <div className="flex justify-end mt-8 mb-10 relative z-10">
                 <div className="w-[280px] space-y-3">
                   <div className="flex justify-between text-[9px] uppercase font-bold tracking-widest text-gray-500">
@@ -347,7 +342,6 @@ export default function QuotationPage() {
                 </div>
               </div>
 
-              {/* Notes & Footer - Optimized */}
               <div className="space-y-8 relative z-10">
                 <div className="max-w-[500px]">
                   <h4 className="text-[8px] uppercase font-bold tracking-[0.15em] text-gray-400 mb-1.5 border-b pb-0.5">Terms & Conditions</h4>
@@ -362,7 +356,6 @@ export default function QuotationPage() {
                 </div>
               </div>
               
-              {/* Statutory Footer */}
               <div className="mt-auto pt-8 text-center">
                 <p className="text-[6px] uppercase font-bold tracking-[0.5em] text-gray-300">Enterprise Digital Estimate • Secured by Knewrix ERP</p>
               </div>
